@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "581434951257",
+    "project_id": "dersprogrami-9f7b8",
+    "storage_bucket": "dersprogrami-9f7b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:581434951257:android:c82474ecc5ab98cd8dd348",
+        "android_client_info": {
+          "package_name": "com.example.dersprogrami"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "581434951257-4ohdka2tqlpmmhnpse1gomucgpe90fij.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAFOAPc8YG96qGQngNNSzQyaDLIOx93wxY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "581434951257-4ohdka2tqlpmmhnpse1gomucgpe90fij.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
