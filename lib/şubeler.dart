@@ -1,4 +1,5 @@
 import 'package:dersprogrami/kullanici.dart';
+import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class subeler extends StatefulWidget {
   const subeler({Key? key}) : super(key: key);
@@ -20,7 +21,7 @@ class _subelerState extends State<subeler> {
                 children: <Widget>[
                   Icon(
                     Icons.door_back_door_outlined,
-                    color: Colors.brown,
+                    color: Colors.grey,
                     size: 50.0,
                   ),
                   Text(
@@ -31,7 +32,7 @@ class _subelerState extends State<subeler> {
                     title: Text('geri dön'),
                     trailing: Icon(Icons.arrow_back),
                     onTap: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>kullanici()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>yonetici()));
                     },
                   ),
                 ],
