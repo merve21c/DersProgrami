@@ -1,6 +1,7 @@
 import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
 import 'package:dersprogrami/%C5%9Fubeler.dart';
 import 'package:dersprogrami/b%C3%B6l%C3%BCmler.dart';
+import 'package:dersprogrami/bildirim.dart';
 import 'package:dersprogrami/dersler.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:flutter/material.dart';
@@ -18,8 +19,11 @@ class _yoneticiState extends State<yonetici> {
     return Scaffold(
       appBar: AppBar(),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>bildirim() ));
         },
+        child: Icon(Icons.add_alert),
       ),
       drawer: Drawer(
         child: ListView(
