@@ -1,4 +1,5 @@
 import 'package:dersprogrami/kullanici.dart';
+import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class ogretmenler extends StatefulWidget {
   const ogretmenler({Key? key}) : super(key: key);
