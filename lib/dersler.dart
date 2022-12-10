@@ -1,4 +1,5 @@
 import 'package:dersprogrami/kullanici.dart.';
+import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class dersler extends StatefulWidget {
   const dersler({Key? key}) : super(key: key);
@@ -31,7 +32,7 @@ class _derslerState extends State<dersler> {
                 title: Text('geri dön'),
                 trailing: Icon(Icons.arrow_back),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> kullanici()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
                 },
               ),
       ],
