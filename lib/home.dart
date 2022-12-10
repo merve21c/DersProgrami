@@ -1,6 +1,6 @@
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:flutter/material.dart';
-import 'package:dersprogrami/auth.dart';
+import 'package:dersprogrami/servisler/auth.dart';
 import 'package:flutter/cupertino.dart';
 
 
