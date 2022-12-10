@@ -1,5 +1,6 @@
 import 'package:dersprogrami/kayit.dart';
 import 'package:dersprogrami/kullanici.dart';
+import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -15,8 +16,8 @@ class _girisekraniState extends State<girisekrani> {
     FirebaseAuth auth = FirebaseAuth.instance;
     User? user;
     try{
-   UserCredential userCredential=await auth.signInWithEmailAndPassword(email: email, password: password);
-   user = userCredential.user;
+      UserCredential userCredential=await auth.signInWithEmailAndPassword(email: email, password: password);
+      user = userCredential.user;
     }on FirebaseAuthException catch(e){
       if(e.code == "kullanici yok"){
         print("bu e posta için kullanıcı bulunamadı");
@@ -27,7 +28,6 @@ class _girisekraniState extends State<girisekrani> {
 
   @override
   Widget build(BuildContext context) {
-    var height=MediaQuery.of(context).size.height;
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _passwordController = TextEditingController();
     return Scaffold(
@@ -38,16 +38,6 @@ class _girisekraniState extends State<girisekrani> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Container(
-                height:height *.25,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    fit: BoxFit.cover,
-                    image: AssetImage("assets/images.jpg"),
-                  )
-                ),
-              ),
-
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
@@ -98,7 +88,7 @@ class _girisekraniState extends State<girisekrani> {
                   User? user = await loginUsingEmailPassword(email: _emailController.text, password: _passwordController.text, context: context);
                   print(user);
                   if(user != null){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> kullanici()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> yonetici()));
                   }
                 },
               ),
