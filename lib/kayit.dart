@@ -1,4 +1,4 @@
-import 'package:dersprogrami/auth.dart';
+import 'package:dersprogrami/servisler/auth.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:flutter/material.dart';
 class RegisterPage extends StatefulWidget {
