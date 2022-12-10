@@ -27,6 +27,7 @@ class _girisekraniState extends State<girisekrani> {
 
   @override
   Widget build(BuildContext context) {
+    var height=MediaQuery.of(context).size.height;
     final TextEditingController _emailController = TextEditingController();
     final TextEditingController _passwordController = TextEditingController();
     return Scaffold(
@@ -37,6 +38,16 @@ class _girisekraniState extends State<girisekrani> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
+              Container(
+                height:height *.25,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage("assets/images.jpg"),
+                  )
+                ),
+              ),
+
               TextField(
                 controller: _emailController,
                 decoration: InputDecoration(
