@@ -32,7 +32,7 @@ class _ogretmenlerState extends State<ogretmenler> {
                     title: Text('geri dön'),
                     trailing: Icon(Icons.arrow_back),
                     onTap: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>kullanici()));
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>yonetici()));
                     },
                   ),
                 ],
