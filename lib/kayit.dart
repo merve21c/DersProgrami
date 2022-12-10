@@ -206,7 +206,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       onPressed: () => Navigator.pop(context),
                       icon: Icon(
                         Icons.arrow_back_ios_outlined,
-                        color: Colors.blue.withOpacity(.75),
+                        color: Colors.blueAccent.withOpacity(.75),
                         size: 26,
                       ),
                     ),
@@ -217,7 +217,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       "Kayıt ol",
                       style: TextStyle(
                           fontSize: 20,
-                          color: Colors.blue.withOpacity(.75),
+                          color: Colors.blueAccent.withOpacity(.75),
                           fontWeight: FontWeight.bold),
                     )
                   ],
