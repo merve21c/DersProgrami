@@ -41,7 +41,7 @@ class _girisekraniState extends State<girisekrani> {
                 controller: _emailController,
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                      borderSide: BorderSide(color: Colors.pink),
                     ),
                     labelText: 'E_posta',
                     hintText: 'E_postanızı giriniz',
@@ -49,7 +49,7 @@ class _girisekraniState extends State<girisekrani> {
                       Icons.person,
                       color: Colors.grey,
                     ),
-                    labelStyle: TextStyle(color: Colors.blueAccent),
+                    labelStyle: TextStyle(color: Colors.pink),
                     border: OutlineInputBorder()),
               ),
               SizedBox(height: 10.0),
@@ -58,7 +58,7 @@ class _girisekraniState extends State<girisekrani> {
                 controller: _passwordController,
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blueAccent),
+                      borderSide: BorderSide(color: Colors.pink),
                     ),
                     labelText: 'Şifre',
                     hintText: 'Şifrenizi giriniz',
@@ -66,7 +66,7 @@ class _girisekraniState extends State<girisekrani> {
                       Icons.key_sharp,
                       color: Colors.grey,
                     ),
-                    labelStyle: TextStyle(color: Colors.blueAccent),
+                    labelStyle: TextStyle(color: Colors.pink),
                     border: OutlineInputBorder()),
               ),
               Row(
@@ -82,6 +82,7 @@ class _girisekraniState extends State<girisekrani> {
               ),
               ElevatedButton(
                 child: Text('Giriş'),
+
                 onPressed: () async {
                   User? user = await loginUsingEmailPassword(email: _emailController.text, password: _passwordController.text, context: context);
                   print(user);
