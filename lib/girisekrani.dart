@@ -47,7 +47,7 @@ class _girisekraniState extends State<girisekrani> {
                     hintText: 'E_postanızı giriniz',
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Colors.grey,
+                      color: Colors.black,
                     ),
                     labelStyle: TextStyle(color: Colors.pink),
                     border: OutlineInputBorder()),
@@ -64,7 +64,7 @@ class _girisekraniState extends State<girisekrani> {
                     hintText: 'Şifrenizi giriniz',
                     prefixIcon: Icon(
                       Icons.key_sharp,
-                      color: Colors.grey,
+                      color: Colors.black,
                     ),
                     labelStyle: TextStyle(color: Colors.pink),
                     border: OutlineInputBorder()),
