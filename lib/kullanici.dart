@@ -1,17 +1,11 @@
-import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
-import 'package:dersprogrami/%C5%9Fubeler.dart';
-import 'package:dersprogrami/b%C3%B6l%C3%BCmler.dart';
 import 'package:dersprogrami/bolumlerK.dart';
-import 'package:dersprogrami/dersler.dart';
 import 'package:dersprogrami/derslerK.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
 import 'package:dersprogrami/subelerK.dart';
 import 'package:flutter/material.dart';
-
 class kullanici  extends StatefulWidget {
   const kullanici({Key? key}) : super(key: key);
-
   @override
   State<kullanici> createState() => _kullanici();
 }
@@ -39,15 +33,6 @@ class _kullanici extends State<kullanici> {
                 ],
               ),
             ),
-          ),
-
-          ListTile(
-            leading: Icon(Icons.power_settings_new_outlined),
-            title: Text('Çıkış yap'),
-            trailing: Icon(Icons.close),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> girisekrani()));
-            },
           ),
 
           ListTile(
@@ -80,6 +65,14 @@ class _kullanici extends State<kullanici> {
             trailing: Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=>bolumlerK()));
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.power_settings_new_outlined),
+            title: Text('Çıkış yap'),
+            trailing: Icon(Icons.close),
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> girisekrani()));
             },
           ),
         ],
