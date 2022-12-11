@@ -88,7 +88,7 @@ class _girisekraniState extends State<girisekrani> {
                   User? user = await loginUsingEmailPassword(email: _emailController.text, password: _passwordController.text, context: context);
                   print(user);
                   if(user != null){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> yonetici()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> kullanici()));
                   }
                 },
               ),
