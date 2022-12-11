@@ -1,8 +1,12 @@
 import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
 import 'package:dersprogrami/%C5%9Fubeler.dart';
 import 'package:dersprogrami/b%C3%B6l%C3%BCmler.dart';
+import 'package:dersprogrami/bolumlerK.dart';
 import 'package:dersprogrami/dersler.dart';
+import 'package:dersprogrami/derslerK.dart';
 import 'package:dersprogrami/girisekrani.dart';
+import 'package:dersprogrami/ogretmenlerK.dart';
+import 'package:dersprogrami/subelerK.dart';
 import 'package:flutter/material.dart';
 
 class kullanici  extends StatefulWidget {
@@ -51,7 +55,7 @@ class _kullanici extends State<kullanici> {
             title: Text('Dersler'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> dersler()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> derslerK()));
             },
           ),
           ListTile(
@@ -59,7 +63,7 @@ class _kullanici extends State<kullanici> {
             title: Text('Şubeler'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> subeler()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> subelerK()));
             },
           ),
           ListTile(
@@ -67,7 +71,7 @@ class _kullanici extends State<kullanici> {
             title: Text('Öğretmenler'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmenler()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmenlerK()));
             },
           ),
           ListTile(
@@ -75,7 +79,7 @@ class _kullanici extends State<kullanici> {
             title: Text('Bölümler'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>bolumler()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>bolumlerK()));
             },
           ),
         ],
