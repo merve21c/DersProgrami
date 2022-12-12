@@ -23,7 +23,7 @@ class AuthService {
         email: email, password: password);
 
     await _firestore
-        .collection("Kullanıcı")
+        .collection("Kullanıcı")     //yeni kayıt yaparken kullanıcı bilgilerini veri tabanına ekler.
         .doc(user.user!.uid)
         .set({'userName': name, 'email': email});
 
