@@ -1,3 +1,5 @@
+import 'package:dersprogrami/girisekrani.dart';
+import 'package:dersprogrami/kayit.dart';
 import 'package:dersprogrami/kullanici.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -80,6 +82,25 @@ class _KgirisState extends State<Kgiris> {
                   }
                 },
               ),
+              ElevatedButton(
+                child: Text('Geri Dön'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => girisekrani()));
+                },
+              ),
+              ElevatedButton(
+                child: Text('Kayıt Ol'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RegisterPage())); //kayıt
+                },
+              ),
+
             ],
           ),
         ),
