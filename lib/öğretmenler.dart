@@ -14,6 +14,8 @@ TextEditingController t1 = TextEditingController();
 TextEditingController t2 = TextEditingController();
 TextEditingController t3 = TextEditingController();
 
+  var resizeToAvoidBottomPadding;
+
 
  oEkle(){
    FirebaseFirestore.instance
@@ -61,24 +63,47 @@ oSil(){
                     "ÖĞRETMENLER",
                     style: TextStyle(color: Colors.black, fontSize: 25.0),
                   ),
-                  ListTile(
-                    title: Text('geri dön'),
-                    trailing: Icon(Icons.arrow_back),
-                    onTap: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>yonetici()));
-                    },
+                  SizedBox(
+                   height: 100,
+                    child:   ListTile(
+                      title: Text('geri dön'),
+                      trailing: Icon(Icons.arrow_back),
+                      onTap: () {
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=>yonetici()));
+                      },
+                    ),
                   ),
 
-                  TextField(controller: t1,),
-                  TextField(controller: t2,),
-                  TextField(controller: t3,),
                   Row(children: [
-                    ElevatedButton(onPressed: oEkle , child: Text("ekle")),
-                    ElevatedButton(onPressed: oGuncelle ,child: Text("güncelle")),
-                    ElevatedButton(onPressed: oSil, child: Text("sil")),
-
-
-                  ],),
+                    ElevatedButton(
+                      child: Text('Ekle'),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => kullanici())); //ekle
+                      },
+                    ),
+                    ElevatedButton(
+                      child: Text('Güncelle'),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => kullanici())); //güncelle
+                      },
+                    ),
+                    ElevatedButton(
+                      child: Text('Sil'),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => kullanici())); //sil
+                      },
+                    ),
+                  ],
+                  ),
 
                 ],
               ),
