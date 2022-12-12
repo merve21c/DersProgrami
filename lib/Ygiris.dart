@@ -1,4 +1,4 @@
-import 'package:dersprogrami/kayit.dart';
+import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -82,12 +82,12 @@ class _YgirisState extends State<Ygiris> {
                 },
               ),
               ElevatedButton(
-                child: Text('Kayıt Ol'),
+                child: Text('Geri Dön'),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => RegisterPage())); //kayıt
+                          builder: (context) => girisekrani()));
                 },
               ),
             ],
