@@ -1,4 +1,3 @@
-import 'package:dersprogrami/Oekle.dart';
 import 'package:dersprogrami/kullanici.dart';
 import 'package:flutter/material.dart';
 
@@ -42,13 +41,13 @@ class _ogretmenlerKState extends State<ogretmenlerK> {
                       Navigator.push(context,MaterialPageRoute(builder: (context)=>kullanici()));
                     },
                   ),
-                  ListTile(
-                    title: Text('Ekle'),
-                    trailing: Icon(Icons.add),
-                    onTap: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Oekle()));
-                    },
-                  ),
+          ListTile(
+            title: Text('Murat Albayrak'),
+            trailing: Icon(Icons.person),
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>kullanici()));
+            },
+          ),
                 ],
               ),
     );
