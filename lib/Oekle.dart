@@ -1,5 +1,5 @@
 import 'package:dersprogrami/ogretmenlerK.dart';
-import 'package:dersprogrami/servisler/auth.dart';
+import 'package:dersprogrami/servisler/Oekle_service.dart';
 import 'package:flutter/material.dart';
 
 
@@ -13,10 +13,10 @@ class Oekle extends StatefulWidget {
 class _OekleState extends State<Oekle> {
   final TextEditingController _adisoyadiController = TextEditingController();
   final TextEditingController _unvanController = TextEditingController();
-  final TextEditingController _bransController = TextEditingController();
+  final TextEditingController _dersController = TextEditingController();
 
 
-  AuthService _authService = AuthService();
+ OekleService _oekleService = OekleService();
 
   @override
   Widget build(BuildContext context) {
@@ -52,11 +52,7 @@ class _OekleState extends State<Oekle> {
                               cursorColor: Colors.white,
                               keyboardType: TextInputType.emailAddress,
                               decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.person,
-                                  color: Colors.white,
-                                ),
-                                hintText: 'Kullanıcı adı soyadı',
+                                hintText: ' Adı soyadı',
                                 prefixText: ' ',
                                 hintStyle: TextStyle(color: Colors.white),
                                 focusColor: Colors.white,
@@ -119,17 +115,14 @@ class _OekleState extends State<Oekle> {
                           ),
                           InkWell(
                             onTap: () {
-                              _authService
-                                  .Oekle(
-                                  _adisoyadiController,
-                                  _unvanController,
-                                 _bransController
-                              )
+                              _oekleService.addOekle(_adisoyadiController.text, _unvanController.text, _dersController.text)
                                   .then((value) {
                                 return Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>ogretmenlerK ()));
+                                        builder: (context) =>ogretmenlerK ()
+                              )
+                              );
                               });
                             },
                             child: Container(
