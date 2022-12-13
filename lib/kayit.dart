@@ -10,8 +10,8 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _adiController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _passwordAgainController =
-  TextEditingController();
+  final TextEditingController _passwordAgainController = TextEditingController();
+
 
   AuthService _authService = AuthService();
 
@@ -54,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
                                   Icons.person,
                                   color: Colors.white,
                                 ),
-                                hintText: 'Kullanıcı adı',
+                                hintText: 'Kullanıcı adı ',
                                 prefixText: ' ',
                                 hintStyle: TextStyle(color: Colors.white),
                                 focusColor: Colors.white,
@@ -159,8 +159,10 @@ class _RegisterPageState extends State<RegisterPage> {
                               _authService
                                   .createKullanici(
                                   _adiController.text,
-                                  _emailController.text,
-                                  _passwordController.text)
+                                 _emailController.text,
+                                  _passwordController.text,
+
+                              )
                                   .then((value) {
                                 return Navigator.push(
                                     context,
