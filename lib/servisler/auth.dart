@@ -21,25 +21,13 @@ class AuthService {
   Future<User?> createKullanici(String name, String email, String password) async {
     var user = await _auth.createUserWithEmailAndPassword(
         email: email, password: password);
-
     await _firestore
         .collection("Kullanıcı")     //yeni kayıt yaparken kullanıcı bilgilerini veri tabanına ekler.
         .doc(user.user!.uid)
         .set({'userName': name, 'email': email});
 
     return user.user;
-  }
-
-
-  Future<User?> Oekle( adisoyadi,  unvan,  ders) async {
-  var user;
-  await _firestore
-      .collection("Öğretmen")     //yeni kayıt yaparken kullanıcı bilgilerini veri tabanına ekler.
-      .doc(user.user!.uid)
-      .set({'adısoyadı': adisoyadi,'ünvan':unvan ,'ders': ders });
-
-
-  }
+   }
   }
 
 
