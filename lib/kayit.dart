@@ -18,7 +18,7 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size; //pencere boyutu ayarlamak için
-    return Scaffold(   //scaffold uygulamanın iskelesi
+    return Scaffold(                        //scaffold uygulamanın iskelesi
         body: Stack(
           children: [
             Center(
