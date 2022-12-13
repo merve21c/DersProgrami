@@ -1,3 +1,4 @@
+import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
 import 'package:dersprogrami/servisler/Oekle_service.dart';
 import 'package:flutter/material.dart';
@@ -120,7 +121,7 @@ class _OekleState extends State<Oekle> {
                                 return Navigator.push(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) =>ogretmenlerK ()
+                                        builder: (context) =>ogretmenler()
                               )
                               );
                               });
