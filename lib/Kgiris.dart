@@ -94,10 +94,7 @@ class _KgirisState extends State<Kgiris> {
               ElevatedButton(
                 child: Text('Kayıt Ol'),
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => RegisterPage())); //kayıt
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage())); //kayıt
                 },
               ),
 
