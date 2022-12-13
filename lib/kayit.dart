@@ -1,24 +1,24 @@
 import 'package:dersprogrami/servisler/auth.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:flutter/material.dart';
-class RegisterPage extends StatefulWidget {
+class RegisterPage extends StatefulWidget {   //kayıt ol sınıfı
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  final TextEditingController _adiController = TextEditingController();
+  final TextEditingController _adiController = TextEditingController();   //kontroller
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _passwordAgainController = TextEditingController();
 
 
-  AuthService _authService = AuthService();
+  AuthService _authService = AuthService();   //kimlik doğrulama veri tabanı
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Scaffold(
+    var size = MediaQuery.of(context).size; //pencere boyutu ayarlamak için
+    return Scaffold(   //scaffold uygulamanın iskelesi
         body: Stack(
           children: [
             Center(
