@@ -18,6 +18,13 @@ class _yoneticiState extends State<yonetici> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      body: Center(
+        child: Icon(
+            Icons.person,
+            color: Colors.blueGrey.shade300,
+            size: 300
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
