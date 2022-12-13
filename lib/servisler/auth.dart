@@ -29,4 +29,17 @@ class AuthService {
 
     return user.user;
   }
-}
+
+
+  Future<User?> Oekle( adisoyadi,  unvan,  ders) async {
+  var user;
+  await _firestore
+      .collection("Öğretmen")     //yeni kayıt yaparken kullanıcı bilgilerini veri tabanına ekler.
+      .doc(user.user!.uid)
+      .set({'adısoyadı': adisoyadi,'ünvan':unvan ,'ders': ders });
+
+
+  }
+  }
+
+
