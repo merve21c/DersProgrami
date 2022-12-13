@@ -1,4 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dersprogrami/Oekle.dart';
 import 'package:dersprogrami/kullanici.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ogretmenlerK extends StatefulWidget {
@@ -6,9 +10,16 @@ class ogretmenlerK extends StatefulWidget {
 
   @override
   State<ogretmenlerK> createState() => _ogretmenlerKState();
+
 }
 
 class _ogretmenlerKState extends State<ogretmenlerK> {
+
+  Future<User?>InformationCollector({required String adisoyadi, required String unvan,  required String ders , required BuildContext context}) async{
+    FirebaseAuth auth = FirebaseAuth.instance;
+    User? user;
+    return user;
+  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -25,22 +36,30 @@ class _ogretmenlerKState extends State<ogretmenlerK> {
                     size: 50.0,
                   ),
                   Text(
-                    "ÖĞRETMENLER",
+                    "Öğretmenler",
                     style: TextStyle(color: Colors.black, fontSize: 25.0),
                   ),
-                  ListTile(
+                ],
+              ),
+            ),
+          ),
+
+          ListTile(
                     title: Text('geri dön'),
                     trailing: Icon(Icons.arrow_back),
                     onTap: () {
                       Navigator.push(context,MaterialPageRoute(builder: (context)=>kullanici()));
                     },
                   ),
+                  ListTile(
+                    title: Text('Ekle'),
+                    trailing: Icon(Icons.add),
+                    onTap: () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context)=>Oekle()));
+                    },
+                  ),
                 ],
               ),
-            ),
-          ),
-        ],
-      ),
     );
   }
 }
