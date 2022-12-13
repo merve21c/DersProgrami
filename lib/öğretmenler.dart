@@ -14,8 +14,18 @@ class ogretmenler extends StatefulWidget {
 class _ogretmenlerState extends State<ogretmenler> {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      child: ListView(
+    return Scaffold(
+      appBar: AppBar(),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>Oekle()));
+        },
+        child: Icon(Icons.add),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
         children: <Widget>[
           DrawerHeader(
             child: Align(
@@ -57,16 +67,8 @@ class _ogretmenlerState extends State<ogretmenler> {
               Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmen()));
             },
           ),
-
-          ListTile(
-            title: Text('Ekle'),
-            trailing: Icon(Icons.add),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>Oekle()));
-            },
-          ),
-
         ],
+      ),
       ),
     );
   }
