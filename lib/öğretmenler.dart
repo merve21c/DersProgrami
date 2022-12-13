@@ -16,6 +16,13 @@ class _ogretmenlerState extends State<ogretmenler> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+      body: Center(
+        child: Icon(
+            Icons.people_alt,
+        color: Colors.blueGrey.shade300,
+          size: 300
+        ),
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
