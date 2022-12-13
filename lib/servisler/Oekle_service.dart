@@ -1,17 +1,29 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
-
+import 'package:dersprogrami/model/Oekle.dart';
 
 class OekleService{
-  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
-  Future<User?> Oekle( adisoyadi,  unvan,  ders) async {
-    var user;
-    await _firestore
-        .collection("Öğretmen")     //yeni kayıt yaparken kullanıcı bilgilerini veri tabanına ekler.
-        .doc(user.user!.uid)
-        .set({'adısoyadı': adisoyadi,'ünvan':unvan ,'ders': ders });
+final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+// veri ekleme fonksiyonu
+ Future<Oekle> addOekle(String adisoyadi , String unvan , String ders)async{
+  var ref = _firestore.collection("Öğretmenler");  //koleksiyonumuzun ismini yazıyoruz .
+    await ref.add({
 
-  }
+    'adisoyadi':adisoyadi,
+    'unvan':unvan,
+    'ders':ders
+
+  });
+  return Oekle( adisoyadi: adisoyadi, unvan: unvan, ders: ders);
+
+ }
+
+ //veri gösterme fonksiyonu
+  //sayfadaki verilerin anlık değişimini göstermek için stream kullanıyoruz
+ Stream<QuerySnapshot> getOekle(){
+ var ref = _firestore.collection("Öğretmenler").snapshots();
+ return ref;
+ }
+
 }
