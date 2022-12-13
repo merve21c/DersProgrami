@@ -1,8 +1,5 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dersprogrami/Oekle.dart';
 import 'package:dersprogrami/kullanici.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ogretmenlerK extends StatefulWidget {
@@ -14,12 +11,6 @@ class ogretmenlerK extends StatefulWidget {
 }
 
 class _ogretmenlerKState extends State<ogretmenlerK> {
-
-  Future<User?>InformationCollector({required String adisoyadi, required String unvan,  required String ders , required BuildContext context}) async{
-    FirebaseAuth auth = FirebaseAuth.instance;
-    User? user;
-    return user;
-  }
   @override
   Widget build(BuildContext context) {
     return Drawer(
