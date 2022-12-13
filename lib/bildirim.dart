@@ -20,7 +20,7 @@ class _bildirimState extends State<bildirim> {
       children: <Widget>[
         Icon(
           Icons.add_alert,
-          color: Colors.grey,
+          color: Colors.amberAccent,
           size: 50.0,
         ),
         Text(
