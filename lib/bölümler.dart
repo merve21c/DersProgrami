@@ -1,3 +1,5 @@
+import 'package:dersprogrami/ekle_sil/Bekle.dart';
+import 'package:dersprogrami/ekle_sil/Bsil.dart';
 import 'package:dersprogrami/kullanici.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +19,7 @@ class _bolumlerState extends State<bolumler> {
             actions: <Widget>[
               IconButton( icon: Icon(Icons.delete),
                   onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Bsil()));
                   }
               )
             ]
@@ -32,7 +34,7 @@ class _bolumlerState extends State<bolumler> {
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>Oekle() ));
+                MaterialPageRoute(builder: (context) =>Bekle()));
           },
           child: Icon(Icons.add),
         ),
