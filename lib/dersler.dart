@@ -1,3 +1,4 @@
+import 'package:dersprogrami/ekle_sil/Dsil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class dersler extends StatefulWidget {
@@ -16,7 +17,7 @@ class _derslerState extends State<dersler> {
           actions: <Widget>[
             IconButton( icon: Icon(Icons.delete),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Dsil()));
                 }
             )
           ]
@@ -31,7 +32,7 @@ class _derslerState extends State<dersler> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Oekle() ));
+              MaterialPageRoute(builder: (context) =>Dsil()));
         },
         child: Icon(Icons.add),
       ),
