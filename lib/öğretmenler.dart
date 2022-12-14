@@ -1,6 +1,7 @@
-import 'package:dersprogrami/Oekle.dart';
+import 'package:dersprogrami/ekle_sil/Oekle.dart';
 import 'package:dersprogrami/Ogretmenler/M.Mustafa_Bah%C5%9Fi.dart';
 import 'package:dersprogrami/Ogretmenler/Murat_Albayrak.dart';
+import 'package:dersprogrami/ekle_sil/Osil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 
@@ -15,21 +16,34 @@ class _ogretmenlerState extends State<ogretmenler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+
+
+      appBar: AppBar(
+          title: Text("sil"),
+          actions: <Widget>[
+            IconButton( icon: Icon(Icons.delete),
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                }
+            )
+          ]
+      ),
       body: Center(
         child: Icon(
-            Icons.people_alt,
-        color: Colors.blueGrey.shade300,
-          size: 300
+            Icons.person,
+            color: Colors.blueGrey.shade300,
+            size: 300
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Oekle()));
+              MaterialPageRoute(builder: (context) =>Oekle() ));
         },
         child: Icon(Icons.add),
       ),
+
+
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
