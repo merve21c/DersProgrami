@@ -12,7 +12,16 @@ class _bolumlerState extends State<bolumler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+            title: Text("sil"),
+            actions: <Widget>[
+              IconButton( icon: Icon(Icons.delete),
+                  onPressed: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                  }
+              )
+            ]
+        ),
         body: Center(
           child: Icon(
               Icons.play_lesson,
@@ -20,6 +29,14 @@ class _bolumlerState extends State<bolumler> {
               size: 300
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) =>Oekle() ));
+          },
+          child: Icon(Icons.add),
+        ),
+
 
         drawer: Drawer(
           child: ListView(
