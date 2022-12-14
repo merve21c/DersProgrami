@@ -15,7 +15,7 @@ class _bolumlerState extends State<bolumler> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text("sil"),
+            title: Text("Sil"),
             actions: <Widget>[
               IconButton( icon: Icon(Icons.delete),
                   onPressed: (){
@@ -55,7 +55,7 @@ class _bolumlerState extends State<bolumler> {
                         size: 50.0,
                       ),
                       Text(
-                        "Dersler",
+                        "BÖLÜMLER",
                         style: TextStyle(color: Colors.black, fontSize: 25.0),
                       ),
                     ],
