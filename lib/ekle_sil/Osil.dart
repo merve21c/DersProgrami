@@ -1,3 +1,4 @@
+import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 
@@ -43,7 +44,7 @@ class _OsilState extends State<Osil> {
                 leading: Icon(Icons.keyboard_return),
                 title: Text('Geri dön'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> ogretmenler()));
                 },
               ),
             ],
