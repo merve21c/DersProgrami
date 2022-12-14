@@ -1,3 +1,4 @@
+import 'package:dersprogrami/ekle_sil/Dekle.dart';
 import 'package:dersprogrami/ekle_sil/Dsil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
@@ -32,7 +33,7 @@ class _derslerState extends State<dersler> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Dsil()));
+              MaterialPageRoute(builder: (context) =>Dekle()));
         },
         child: Icon(Icons.add),
       ),
