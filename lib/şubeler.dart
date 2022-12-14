@@ -1,5 +1,5 @@
 import 'package:dersprogrami/ekle_sil/Sekle.dart';
-import 'package:dersprogrami/kullanici.dart';
+import 'package:dersprogrami/ekle_sil/Ssil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class subeler extends StatefulWidget {
@@ -18,7 +18,7 @@ class _subelerState extends State<subeler> {
             actions: <Widget>[
               IconButton( icon: Icon(Icons.delete),
                   onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Ssil()));
                   }
               )
             ]
