@@ -54,7 +54,7 @@ class _subelerState extends State<subeler> {
                         size: 50.0,
                       ),
                       Text(
-                        "Dersler",
+                        "ŞUBELER",
                         style: TextStyle(color: Colors.black, fontSize: 25.0),
                       ),
                     ],
