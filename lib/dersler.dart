@@ -11,7 +11,16 @@ class _derslerState extends State<dersler> {
   @override
   Widget build(BuildContext context) {
   return  Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+          title: Text("sil"),
+          actions: <Widget>[
+            IconButton( icon: Icon(Icons.delete),
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                }
+            )
+          ]
+      ),
     body: Center(
     child: Icon(
     Icons.my_library_books,
@@ -19,8 +28,16 @@ class _derslerState extends State<dersler> {
     size: 300
     ),
     ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>Oekle() ));
+        },
+        child: Icon(Icons.add),
+      ),
 
-    drawer: Drawer(
+
+      drawer: Drawer(
     child: ListView(
     padding: EdgeInsets.zero,
     children: <Widget>[
