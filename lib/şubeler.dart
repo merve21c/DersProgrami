@@ -1,3 +1,4 @@
+import 'package:dersprogrami/ekle_sil/Sekle.dart';
 import 'package:dersprogrami/kullanici.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +13,16 @@ class _subelerState extends State<subeler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(),
+        appBar: AppBar(
+            title: Text("sil"),
+            actions: <Widget>[
+              IconButton( icon: Icon(Icons.delete),
+                  onPressed: (){
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                  }
+              )
+            ]
+        ),
         body: Center(
           child: Icon(
               Icons.door_back_door_outlined,
@@ -20,6 +30,14 @@ class _subelerState extends State<subeler> {
               size: 300
           ),
         ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => Sekle()));
+          },
+          child: Icon(Icons.add),
+        ),
+
 
         drawer: Drawer(
           child: ListView(
