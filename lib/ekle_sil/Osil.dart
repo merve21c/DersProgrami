@@ -30,13 +30,9 @@ class _OsilState extends State<Osil> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Icon(
-                        Icons.delete,
-                        color: Colors.grey,
-                        size: 50.0,
-                      ),
+
                       Text(
-                        "Dersler",
+                        "ÖĞRETMENLER",
                         style: TextStyle(color: Colors.black, fontSize: 25.0),
                       ),
                     ],
