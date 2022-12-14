@@ -26,4 +26,11 @@ final FirebaseFirestore _firestore = FirebaseFirestore.instance;
  return ref;
  }
 
+
+  //status silmek için
+  Future<void> removeOekle(String docId) {
+    var ref = _firestore.collection("Status").doc(docId).delete();
+
+    return ref;
+  }
 }
