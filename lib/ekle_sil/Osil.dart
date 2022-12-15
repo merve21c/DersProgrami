@@ -1,5 +1,4 @@
 import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
-import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 
 class Osil extends StatefulWidget {
