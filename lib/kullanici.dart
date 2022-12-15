@@ -13,7 +13,7 @@ class kullanici  extends StatefulWidget {
 class _kullanici extends State<kullanici> {
   @override
   Widget build(BuildContext context) {
-    return Drawer(
+    return Drawer(     //çekme görünümü versin diye drawer wigettini dödürüyoruz
       child: ListView(
         children: <Widget>[
           DrawerHeader(
@@ -35,7 +35,7 @@ class _kullanici extends State<kullanici> {
             ),
           ),
 
-          ListTile(
+          ListTile(                                   //listviewlarrımıza detaylı eklemeler(icon vs) yapabilmek için bu widgeti kullanıyoruz
             leading: Icon(Icons.my_library_books),
             title: Text('Dersler'),
             trailing: Icon(Icons.arrow_right),
