@@ -19,7 +19,7 @@ class _bolumlerState extends State<bolumler> {
             actions: <Widget>[
               IconButton( icon: Icon(Icons.delete),
                   onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Bsil()));
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Bsil()));   //sayfalar arası geçiş
                   }
               )
             ]
