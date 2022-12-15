@@ -1,5 +1,4 @@
 import 'package:dersprogrami/kullanici.dart';
-import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 
 class bolumlerK extends
