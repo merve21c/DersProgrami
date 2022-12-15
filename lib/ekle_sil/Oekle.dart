@@ -13,114 +13,125 @@ class _OekleState extends State<Oekle> {
   final TextEditingController _adisoydiController = TextEditingController();
   final TextEditingController _unvanController = TextEditingController();
   final TextEditingController _dersController = TextEditingController();
-
+final TextEditingController OekleController = TextEditingController();
   OekleService _oekleService = OekleService();
   @override
 
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Stack(
+      appBar: AppBar(
+        title: Text("Öğretmen ekle"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Center(
-            child:  Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Container(
-                height: size.height * .7,
-                width: size.width * .85,
-                decoration: BoxDecoration(
-                  color: Colors.blue.withOpacity(.75),
-                  borderRadius: BorderRadius.all(Radius.circular(20)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(.75),
-                      blurRadius: 10,
-                      spreadRadius: 2)
-                  ]
-                ),
-                  child: Padding(
-                  padding: const EdgeInsets.all(10.0),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TextField(
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                          cursorColor: Colors.white,
-                          keyboardType: TextInputType.emailAddress,
-                          decoration: InputDecoration(
-                            hintText: 'Adı soyadı',
-                            prefixText: '',
-                            hintStyle: TextStyle(color: Colors.white),
-                            focusColor: Colors.white,
-                              focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.white
-                              )
-                            ),
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.white
-                              )
-                            )
-                          ),
-                        ),
-                        SizedBox(
-                          height: size.height * 0.02,
-                        ),
-                        TextField(
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                            cursorColor: Colors.white,
-                            keyboardType: TextInputType.emailAddress,
-                            decoration: InputDecoration(
-                              hintText: 'Unvan',
-                              prefixText: ' ',
-                              hintStyle: TextStyle(color: Colors.white),
-                              focusColor: Colors.white,
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  )),
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  )),
-                            )),
-                        TextField(
-                            style: TextStyle(
-                              color: Colors.white,
-                            ),
-                            cursorColor: Colors.white,
-                            decoration: InputDecoration(
-                              hintText: 'Ders',
-                              prefixText: ' ',
-                              hintStyle: TextStyle(color: Colors.white),
-                              focusColor: Colors.white,
-                              focusedBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  )),
-                              enabledBorder: UnderlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.white,
-                                  )),
-                            )),
-                        SizedBox(
-                          height: size.height * 0.02,
-                        )
-                      ],
+          Padding(padding: const EdgeInsets.all(8.0),
+      child: Container(
+    height: size.height * .4,
+      decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(color: Colors.blue, width: 2),
+          borderRadius: BorderRadius.all(Radius.circular(10))),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+            TextField(
+            controller: _adisoydiController,
+            maxLines: 2,
+            decoration: InputDecoration(
+              hintText: "Ad Soyad",
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+              focusedBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+              border: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white),
+              ),
+            )),
+              TextField(
+                  controller: _unvanController,
+                  maxLines: 2,
+                  decoration: InputDecoration(
+                    hintText: "Unvan",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
                     ),
-            ),
-              ),
-              ),
-                ),
-          )
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    border: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  )),
+              TextField(
+                  controller: _dersController,
+                  maxLines: 2,
+                  decoration: InputDecoration(
+                    hintText: "Ders Adı",
+                    enabledBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    focusedBorder: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                    border: UnderlineInputBorder(
+                      borderSide: BorderSide(color: Colors.white),
+                    ),
+                  )),
+    Padding(
+    padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 25),
+    child: InkWell(
+    onTap: () {
+   _oekleService
+        .addOekle(_adisoydiController.text , _unvanController.text , _dersController.text ,'')
+        .then((value) {
+    Fluttertoast.showToast(
+    msg: "Durum eklendi!",
+    timeInSecForIosWeb: 2,
+    toastLength: Toast.LENGTH_SHORT,
+    gravity: ToastGravity.BOTTOM,
+    backgroundColor: Colors.grey[600],
+    textColor: Colors.white,
+    fontSize: 14);
+    Navigator.pop(context);
+    });
+    },
+    child: Container(
+    padding: EdgeInsets.symmetric(vertical: 5),
+    decoration: BoxDecoration(
+    border: Border.all(color: Colors.blue, width: 2),
+    //color: colorPrimaryShade,
+    borderRadius: BorderRadius.all(Radius.circular(30))),
+    child: Padding(
+    padding: const EdgeInsets.all(5.0),
+    child: Center(
+    child: Text(
+    "Ekle",
+    style: TextStyle(
+    color: Colors.blue,
+    fontSize: 20,
+    ),
+    )),
+    ),
+    ),
+    ),
+    ),
+    ],
+
+
+
+
+    ),
+      ),
+      ),
+          ),
         ],
-        )
+      ),
     );
   }
 }
