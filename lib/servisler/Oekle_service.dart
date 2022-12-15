@@ -6,7 +6,7 @@ class OekleService{
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
- Future<Oekle> addOekle(String adisoyadi , String unvan , String ders)async{
+ Future<Oekle> addOekle(String adisoyadi , String unvan , String ders, String text)async{
   var ref = _firestore.collection("Öğretmenler");  //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
 
