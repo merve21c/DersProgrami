@@ -91,8 +91,8 @@ final TextEditingController OekleController = TextEditingController();
         .addOekle(_adisoydiController.text , _unvanController.text , _dersController.text ,'')
         .then((value) {
     Fluttertoast.showToast(
-    msg: "Durum eklendi!",
-    timeInSecForIosWeb: 2,
+    msg: "Öğretmen eklendi!",
+    timeInSecForIosWeb: 5,
     toastLength: Toast.LENGTH_SHORT,
     gravity: ToastGravity.BOTTOM,
     backgroundColor: Colors.grey[600],
