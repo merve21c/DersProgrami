@@ -1,6 +1,4 @@
 import 'package:dersprogrami/ekle_sil/Oekle.dart';
-import 'package:dersprogrami/Ogretmenler/M.Mustafa_Bah%C5%9Fi.dart';
-import 'package:dersprogrami/Ogretmenler/Murat_Albayrak.dart';
 import 'package:dersprogrami/ekle_sil/Osil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
@@ -72,20 +70,6 @@ class _ogretmenlerState extends State<ogretmenler> {
             trailing: Icon(Icons.arrow_back),
             onTap: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=>yonetici()));
-            },
-          ),
-          ListTile(
-            title: Text('M.Mustafa Bahşi'),
-            trailing: Icon(Icons.person),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>Mogretmen()));
-            },
-          ),
-          ListTile(
-            title: Text('Murat Albayrak'),
-            trailing: Icon(Icons.person),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmen()));
             },
           ),
         ],
