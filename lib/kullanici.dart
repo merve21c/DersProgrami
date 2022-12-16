@@ -1,8 +1,6 @@
-import 'package:dersprogrami/bolumlerK.dart';
 import 'package:dersprogrami/derslerK.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
-import 'package:dersprogrami/subelerK.dart';
 import 'package:flutter/material.dart';
 class kullanici  extends StatefulWidget {
   const kullanici({Key? key}) : super(key: key);
@@ -44,27 +42,11 @@ class _kullanici extends State<kullanici> {
             },
           ),
           ListTile(
-            leading: Icon(Icons.door_back_door_outlined),
-            title: Text('Şubeler'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> subelerK()));
-            },
-          ),
-          ListTile(
             leading: Icon(Icons.people_alt),
             title: Text('Öğretmenler'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmenlerK()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.play_lesson),
-            title: Text('Bölümler'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>bolumlerK()));
             },
           ),
           ListTile(
