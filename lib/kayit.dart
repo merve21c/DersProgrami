@@ -1,13 +1,13 @@
 import 'package:dersprogrami/servisler/auth.dart';
-import 'package:dersprogrami/girisekrani.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 class RegisterPage extends StatefulWidget {   //kayıt ol sınıfı
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
 
-class _RegisterPageState extends State<RegisterPage> {
-  final TextEditingController _adiController = TextEditingController();   //kontroller
+class _RegisterPageState extends State<RegisterPage> {//kontroller
+  final TextEditingController _adisoyadiController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   final TextEditingController _passwordAgainController = TextEditingController();
@@ -17,216 +17,136 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size; //pencere boyutu ayarlamak için
-    return Scaffold(                        //scaffold uygulamanın iskelesi
-        body: Stack(
-          children: [
-            Center(
+                                              //pencere boyutu ayarlamak için
+    var size = MediaQuery.of(context).size;
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Kayıt Ol"),
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Padding(padding: const EdgeInsets.all(9.0),
+            child: Container(
+              height: size.height * .5,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(color: Colors.blue, width: 2),
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                child: Container(
-                  height: size.height * .7,
-                  width: size.width * .85,
-                  decoration: BoxDecoration(
-                      color: Colors.blue.withOpacity(.75),
-                      borderRadius: BorderRadius.all(Radius.circular(20)),
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.withOpacity(.75),
-                            blurRadius: 10,
-                            spreadRadius: 2)
-                      ]),
-                  child: Padding(
-                    padding: const EdgeInsets.all(10.0),
-                    child: Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TextField(
-                              controller: _adiController,
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                              cursorColor: Colors.white,
-                              keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.person,
-                                  color: Colors.white,
-                                ),
-                                hintText: 'Kullanıcı adı ',
-                                prefixText: ' ',
-                                hintStyle: TextStyle(color: Colors.white),
-                                focusColor: Colors.white,
-                                focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                                enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                              )),
-                          SizedBox(
-                            height: size.height * 0.02,
+                padding: const EdgeInsets.all(9.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    TextField(
+                        controller: _adisoyadiController,
+                        maxLines: 2,
+                        decoration: InputDecoration(
+                          hintText: "Adı Soyadı",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
                           ),
-                          TextField(
-                              controller: _emailController,
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                              cursorColor: Colors.white,
-                              keyboardType: TextInputType.emailAddress,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.mail,
-                                  color: Colors.white,
-                                ),
-                                hintText: 'E-Mail',
-                                prefixText: ' ',
-                                hintStyle: TextStyle(color: Colors.white),
-                                focusColor: Colors.white,
-                                focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                                enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                              )),
-                          SizedBox(
-                            height: size.height * 0.02,
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
                           ),
-                          TextField(
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                              cursorColor: Colors.white,
-                              controller: _passwordController,
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.vpn_key,
-                                  color: Colors.white,
-                                ),
-                                hintText: 'Parola',
-                                prefixText: ' ',
-                                hintStyle: TextStyle(color: Colors.white),
-                                focusColor: Colors.white,
-                                focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                                enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                              )),
-                          SizedBox(
-                            height: size.height * 0.02,
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
                           ),
-                          TextField(
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
-                              cursorColor: Colors.white,
-                              controller: _passwordAgainController,
-                              obscureText: true,
-                              decoration: InputDecoration(
-                                prefixIcon: Icon(
-                                  Icons.vpn_key,
-                                  color: Colors.white,
-                                ),
-                                hintText: 'Parola Tekrar',
-                                prefixText: ' ',
-                                hintStyle: TextStyle(color: Colors.white),
-                                focusColor: Colors.white,
-                                focusedBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                                enabledBorder: UnderlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Colors.white,
-                                    )),
-                              )),
-                          SizedBox(
-                            height: size.height * 0.08,
+                        )),
+                    TextField(
+                        controller: _emailController,
+                        maxLines: 2,
+                        decoration: InputDecoration(
+                          hintText: "E_Posta",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
                           ),
-                          InkWell(
-                            onTap: () {
-                              _authService
-                                  .createKullanici(
-                                  _adiController.text,
-                                 _emailController.text,
-                                  _passwordController.text,
-
-                              )
-                                  .then((value) {
-                                return Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => girisekrani()));
-                              });
-                            },
-                            child: Container(
-                              padding: EdgeInsets.symmetric(vertical: 5),
-                              decoration: BoxDecoration(
-                                  border: Border.all(color: Colors.white, width: 2),
-                                  //color: colorPrimaryShade,
-                                  borderRadius:
-                                  BorderRadius.all(Radius.circular(30))),
-                              child: Padding(
-                                padding: const EdgeInsets.all(5.0),
-                                child: Center(
-                                    child: Text(
-                                      "Kaydet",
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 20,
-                                      ),
-                                    )),
-                              ),
-                            ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
                           ),
-                        ],
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                        )),
+                    TextField(
+                        controller: _passwordController,
+                        maxLines: 2,
+                        decoration: InputDecoration(
+                          hintText: "Parola",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                        )),
+                    TextField(
+                        controller: _passwordAgainController,
+                        maxLines: 2,
+                        decoration: InputDecoration(
+                          hintText: "Parola Tekrar",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 25),
+                      child: InkWell(
+                        onTap: () {
+                          _authService
+                              .createKullanici(_adisoyadiController.text,_emailController.text,_passwordController.text,)
+                              .then((value) {
+                            Fluttertoast.showToast(
+                                msg: "Kayıt Başarılı!",
+                                timeInSecForIosWeb: 5,
+                                toastLength: Toast.LENGTH_SHORT,
+                                gravity: ToastGravity.BOTTOM,
+                                backgroundColor: Colors.grey[600],
+                                textColor: Colors.white,
+                                fontSize: 14);
+                            Navigator.pop(context);
+                          });
+                        },
+                        child: Container(
+                          padding: EdgeInsets.symmetric(vertical: 5),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.blue, width: 2),
+                              //color: colorPrimaryShade,
+                              borderRadius: BorderRadius.all(Radius.circular(30))),
+                          child: Padding(
+                            padding: const EdgeInsets.all(5.0),
+                            child: Center(
+                                child: Text(
+                                  "Kaydet",
+                                  style: TextStyle(
+                                    color: Colors.blue,
+                                    fontSize: 20,
+                                  ),
+                                )),
+                          ),
+                        ),
                       ),
                     ),
-                  ),
+                  ],
+
+
+
+
                 ),
               ),
             ),
-            Padding(
-              padding:
-              EdgeInsets.only(top: size.height * .06, left: size.width * .02),
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: Row(
-                  children: [
-                    IconButton(
-                      onPressed: () => Navigator.pop(context),
-                      icon: Icon(
-                        Icons.arrow_back_ios_outlined,
-                        color: Colors.blueAccent.withOpacity(.75),
-                        size: 26,
-                      ),
-                    ),
-                    SizedBox(
-                      width: size.width * 0.3,
-                    ),
-                    Text(
-                      "Kayıt ol",
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: Colors.blueAccent.withOpacity(.75),
-                          fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-              ),
-            )
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
