@@ -34,8 +34,17 @@ class _kullanici extends State<kullanici> {
           ),
 
           ListTile(                                   //listviewlarrımıza detaylı eklemeler(icon vs) yapabilmek için bu widgeti kullanıyoruz
-            leading: Icon(Icons.my_library_books),
-            title: Text('Dersler'),
+            leading: Icon(Icons.door_back_door_outlined),
+            title: Text('Derslik'),
+            trailing: Icon(Icons.arrow_right),
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> derslerK()));
+            },
+          ),
+
+          ListTile(
+            leading: Icon(Icons.people_outline),
+            title: Text('Öğrenci kapasitesi'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=> derslerK()));
