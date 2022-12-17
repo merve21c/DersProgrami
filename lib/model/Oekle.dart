@@ -9,7 +9,7 @@ class Oekle {
 
   Oekle({required this.adisoyadi, required this.unvan, required this.ders});
 
-  factory Oekle.fromSnapshot(DocumentSnapshot snapshot) { //dokumant snapshot formatında eşitliyoruz
+  factory Oekle.fromSnapshot(DocumentSnapshot snapshot) { //dokumanı snapshot formatında eşitliyoruz
     return Oekle(
       adisoyadi: snapshot["adisoyadi"],
       unvan: snapshot["unvan"],
