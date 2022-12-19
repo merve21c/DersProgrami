@@ -14,7 +14,7 @@ class DekleService {
       'dersadi':dersadi,
       'dersSaati':dersSaati
     });
-    return Dekle(dersId:dersId , dersadi:dersadi,dersSaati:dersSaati );
+    return Dekle();
   }
 
   //veri gösterme fonksiyonu
