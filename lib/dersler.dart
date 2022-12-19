@@ -33,7 +33,7 @@ class _derslerState extends State<dersler> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Dekle()));
+              MaterialPageRoute(builder: (context) =>Dekle());
         },
         child: Icon(Icons.add),
       ),
