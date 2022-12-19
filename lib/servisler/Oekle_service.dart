@@ -26,7 +26,7 @@ final FirebaseFirestore _firestore = FirebaseFirestore.instance;
  }
 
 
-  //status silmek için
+  //veriyi silmek için
   Future<void> removeOekle(String docId) {
     var ref = _firestore.collection("Öğretmenler").doc(docId).delete();
 
