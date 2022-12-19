@@ -22,7 +22,6 @@ final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   //sayfadaki verilerin anlık değişimini göstermek için stream kullanıyoruz
  Stream<QuerySnapshot> getOekle(){
  var ref = _firestore.collection("Öğretmenler").snapshots();
-
  return ref;
  }
 
