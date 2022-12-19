@@ -16,13 +16,13 @@ class _OlistState extends State<Olist> {
 
     return StreamBuilder<QuerySnapshot>(
       stream: _oekleService.getOekle(),
-      builder: (context, snaphot) {
-        return !snaphot.hasData
+      builder: (context, snapshot) {
+        return !snapshot.hasData
             ? CircularProgressIndicator()
             : ListView.builder(
-            itemCount: snaphot.data!.docs.length,
+            itemCount: snapshot.data!.docs.length,
             itemBuilder: (context, index) {
-              DocumentSnapshot mypost = snaphot.data!.docs[index];
+              DocumentSnapshot mypost = snapshot.data!.docs[index];
 
               Future<void> _showChoiseDialog(BuildContext context) {
                 return showDialog(
@@ -100,7 +100,7 @@ class _OlistState extends State<Olist> {
                             height: 10,
                           ),
                           Text(
-                            "${mypost['dersler']}",
+                            "${mypost['unvan']}",
                             style: TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
@@ -108,7 +108,7 @@ class _OlistState extends State<Olist> {
                             height: 10,
                           ),
                           Text(
-                            "${mypost['unvan']}",
+                            "${mypost['ders']}",
                             style: TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
