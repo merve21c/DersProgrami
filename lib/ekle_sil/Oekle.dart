@@ -1,3 +1,6 @@
+import 'dart:html';
+
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dersprogrami/servisler/Oekle_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -13,7 +16,7 @@ class _OekleState extends State<Oekle> {
   final TextEditingController _adisoydiController = TextEditingController();
   final TextEditingController _unvanController = TextEditingController();
   final TextEditingController _dersController = TextEditingController();
-final TextEditingController OekleController = TextEditingController();
+  final TextEditingController OekleController = TextEditingController();
   OekleService _oekleService = OekleService();
   @override
 
