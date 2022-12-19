@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class Dekle extends StatefulWidget {
-  const Dekle({Key? key, required int dersId, required String dersadi, required int dersSaati}) : super(key: key);
+  const Dekle({Key? key}) : super(key: key);
 
   @override
   State<Dekle> createState() => _DekleState();
@@ -19,7 +19,7 @@ class _DekleState extends State<Dekle> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Öğretmen ekle"),
+        title: Text("Ders Bilgileri"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
