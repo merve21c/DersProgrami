@@ -26,7 +26,7 @@ class _ogretmenlerState extends State<ogretmenler> {
       ),
       body: Center(
         child: Icon(
-            Icons.person,
+            Icons.people_alt,
             color: Colors.blueGrey.shade300,
             size: 300
         ),
@@ -34,7 +34,7 @@ class _ogretmenlerState extends State<ogretmenler> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Oekle() ));
+              MaterialPageRoute(builder: (context) =>Oekle()));
         },
         child: Icon(Icons.add),
       ),
