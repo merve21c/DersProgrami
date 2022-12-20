@@ -68,6 +68,27 @@ class _subelerState extends State<subeler> {
                   Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
                 },
               ),
+              ListTile(
+                leading: Icon(Icons.door_back_door),
+                title: Text('Derslik'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.computer),
+                title: Text('Laboratuvar'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.table_restaurant),
+                title: Text('Amfi'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                },
+              ),
             ],
           ),
         )
