@@ -1,3 +1,7 @@
+import 'package:dersprogrami/Amfi.dart';
+import 'package:dersprogrami/Laboratuvar.dart';
+import 'package:dersprogrami/derslikler.dart';
+import 'package:dersprogrami/ekle_sil/Aekle.dart';
 import 'package:dersprogrami/ekle_sil/Sekle.dart';
 import 'package:dersprogrami/ekle_sil/Ssil.dart';
 import 'package:dersprogrami/yonetici.dart';
@@ -72,21 +76,21 @@ class _subelerState extends State<subeler> {
                 leading: Icon(Icons.table_restaurant),
                 title: Text('Derslik'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> derslik()));
                 },
               ),
               ListTile(
                 leading: Icon(Icons.computer),
                 title: Text('Laboratuvar'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> subeler()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Laboratuvar()));
                 },
               ),
               ListTile(
                 leading: Icon(Icons.door_back_door),
                 title: Text('Amfi'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>subeler()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Amfi()));
                 },
               ),
             ],
