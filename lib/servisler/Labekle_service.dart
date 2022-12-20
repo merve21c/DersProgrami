@@ -7,7 +7,7 @@ class LabekleService {
 // veri ekleme fonksiyonu
   Future<Labekle> addLabekle(String laboratuvar , String text) async {
     var ref = _firestore.collection(
-        "Labaratuvar"); //koleksiyonumuzun ismini yazıyoruz .
+        "Laboratuvar"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
 
       'laboratuvar':laboratuvar,
