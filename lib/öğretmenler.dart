@@ -14,8 +14,6 @@ class _ogretmenlerState extends State<ogretmenler> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
-
       appBar: AppBar(
           title: Text("sil"),
           actions: <Widget>[
