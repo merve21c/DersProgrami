@@ -69,7 +69,7 @@ class _subelerState extends State<subeler> {
                 },
               ),
               ListTile(
-                leading: Icon(Icons.door_back_door),
+                leading: Icon(Icons.table_restaurant),
                 title: Text('Derslik'),
                 onTap: () {
                   Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
@@ -79,14 +79,14 @@ class _subelerState extends State<subeler> {
                 leading: Icon(Icons.computer),
                 title: Text('Laboratuvar'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> subeler()));
                 },
               ),
               ListTile(
-                leading: Icon(Icons.table_restaurant),
+                leading: Icon(Icons.door_back_door),
                 title: Text('Amfi'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>subeler()));
                 },
               ),
             ],
