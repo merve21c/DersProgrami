@@ -18,14 +18,7 @@ class _subelerState extends State<subeler> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text("sil"),
-            actions: <Widget>[
-              IconButton( icon: Icon(Icons.delete),
-                  onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Ssil()));
-                  }
-              )
-            ]
+            title: Text("Şubeler"),
         ),
         body: Center(
           child: Icon(
@@ -34,15 +27,6 @@ class _subelerState extends State<subeler> {
               size: 300
           ),
         ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => Sekle()));
-          },
-          child: Icon(Icons.add),
-        ),
-
-
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
