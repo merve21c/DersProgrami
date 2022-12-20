@@ -1,9 +1,6 @@
 import 'package:dersprogrami/Amfi.dart';
 import 'package:dersprogrami/Laboratuvar.dart';
 import 'package:dersprogrami/derslikler.dart';
-import 'package:dersprogrami/ekle_sil/Aekle.dart';
-import 'package:dersprogrami/ekle_sil/Sekle.dart';
-import 'package:dersprogrami/ekle_sil/Ssil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class subeler extends StatefulWidget {
