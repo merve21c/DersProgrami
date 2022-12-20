@@ -1,3 +1,5 @@
+import 'package:dersprogrami/ekle_sil/drsliksil.dart';
+import 'package:dersprogrami/ekle_sil/drslkekle.dart';
 import 'package:flutter/material.dart';
 
 class derslik extends StatefulWidget {
@@ -16,14 +18,14 @@ class _derslikState extends State<derslik> {
           actions: <Widget>[
             IconButton( icon: Icon(Icons.delete),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Ssil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>derslikSil()));
                 }
             )
           ]
       ),
       body: Center(
         child: Icon(
-            Icons.door_back_door_outlined,
+            Icons.table_restaurant,
             color: Colors.blueGrey.shade300,
             size: 300
         ),
@@ -31,7 +33,7 @@ class _derslikState extends State<derslik> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => ()));
+              MaterialPageRoute(builder: (context) =>derslikekle()));
         },
         child: Icon(Icons.add),
       ),
