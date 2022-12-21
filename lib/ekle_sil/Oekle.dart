@@ -13,8 +13,10 @@ class _OekleState extends State<Oekle> {
   final TextEditingController _adisoydiController = TextEditingController();
   final TextEditingController _unvanController = TextEditingController();
   final TextEditingController _dersController = TextEditingController();
+  final TextEditingController _idController = TextEditingController();
   final TextEditingController OekleController = TextEditingController();
   OekleService _oekleService = OekleService();
+
   @override
 
   Widget build(BuildContext context) {
@@ -54,10 +56,10 @@ class _OekleState extends State<Oekle> {
               ),
             )),
               TextField(
-                  controller: _unvanController,
+                  controller: _dersController,
                   maxLines: 2,
                   decoration: InputDecoration(
-                    hintText: "Unvan",
+                    hintText: "Ders",
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -69,10 +71,10 @@ class _OekleState extends State<Oekle> {
                     ),
                   )),
               TextField(
-                  controller: _dersController,
+                  controller: _unvanController,
                   maxLines: 2,
                   decoration: InputDecoration(
-                    hintText: "Ders Adı",
+                    hintText: "Unvan",
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(color: Colors.white),
                     ),
@@ -88,7 +90,7 @@ class _OekleState extends State<Oekle> {
     child: InkWell(
     onTap: () {
    _oekleService
-        .addOekle(_adisoydiController.text , _unvanController.text , _dersController.text ,'')
+        .addOekle(_adisoydiController.text , _unvanController.text , _dersController.text ,_idController.text,'')
         .then((value) {
     Fluttertoast.showToast(
     msg: "Öğretmen eklendi!",
