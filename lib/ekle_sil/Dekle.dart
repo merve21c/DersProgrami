@@ -86,7 +86,7 @@ class _DekleState extends State<Dekle> {
                       child: InkWell(
                         onTap: () {
                           _dekleService
-                              .addDekle(_dersIdController.hashCode , _dersadiController.text , _dersSaatiController.hashCode ,'')
+                              .addDekle(_dersIdController.text , _dersadiController.text , _dersSaatiController.text ,'')
                               .then((value) {
                             Fluttertoast.showToast(
                                 msg: "Ders Bilgileri eklendi!",
