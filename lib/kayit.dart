@@ -102,7 +102,7 @@ class _RegisterPageState extends State<RegisterPage> {//kontroller
                       padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 25),
                       child: InkWell(
                         onTap: () {
-                          _authService
+                         _authService
                               .createKullanici(_adisoyadiController.text,_emailController.text,_passwordController.text,)
                               .then((value) {
                             Fluttertoast.showToast(
@@ -115,6 +115,7 @@ class _RegisterPageState extends State<RegisterPage> {//kontroller
                                 fontSize: 14);
                             Navigator.pop(context);
                           });
+
                         },
                         child: Container(
                           padding: EdgeInsets.symmetric(vertical: 5),
