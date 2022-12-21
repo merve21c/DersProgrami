@@ -5,7 +5,7 @@ class DekleService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
-  Future<Dekle> addDekle(int dersId, String dersadi,int dersSaati ,String text) async {
+  Future<Dekle> addDekle(String dersId, String dersadi,String dersSaati ,String text) async {
     var ref = _firestore.collection(
         "Ders Bilgileri"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
