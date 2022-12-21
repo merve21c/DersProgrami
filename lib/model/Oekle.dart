@@ -4,16 +4,18 @@ class Oekle {
   // ekleyeceğimiz veriler
 
   String adisoyadi;
-  String unvan;
   String ders;
+  String unvan;
+  String id;
 
-  Oekle({required this.adisoyadi, required this.unvan, required this.ders});
+  Oekle({required this.adisoyadi, required this.ders, required this.unvan, required this.id});
 
   factory Oekle.fromSnapshot(DocumentSnapshot snapshot) { //dokumanı snapshot formatında eşitliyoruz
     return Oekle(
       adisoyadi: snapshot["adisoyadi"],
-      unvan: snapshot["unvan"],
       ders: snapshot["ders"],
+      unvan: snapshot["unvan"],
+      id: snapshot["id"],
     );
   }
 }
