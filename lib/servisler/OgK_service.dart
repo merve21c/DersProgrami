@@ -5,15 +5,15 @@ class OgKService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
-  Future<OgK> addOgK(String gun,  String ders, String text) async {
+  Future<OgK> addOgK( String Oadi ,String gun,  String ders, String text) async {
     var ref = _firestore.collection(
         "Ders ve Günler"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
-
-      'Gün': gun,
+      'Oadi':Oadi,
+      'gun': gun,
       'ders': ders
     });
-    return OgK(gun : gun , ders : ders );
+    return OgK( Oadi: Oadi,gun : gun , ders : ders );
   }
 
   //veri gösterme fonksiyonu
