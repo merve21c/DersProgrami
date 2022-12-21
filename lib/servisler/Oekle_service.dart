@@ -5,16 +5,17 @@ class OekleService{
 final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
- Future<Oekle> addOekle(String adisoyadi , String unvan , String ders, String text)async{
+ Future<Oekle> addOekle(String adisoyadi , String ders , String unvan, String id, String text)async{
   var ref = _firestore.collection("Öğretmenler");  //koleksiyonumuzun ismini yazıyoruz .
-    await ref.add({
+  var documentRef = await ref.add({
 
-    'adisoyadi':adisoyadi,
-    'unvan':unvan,
-    'ders':ders
+      'adisoyadi':adisoyadi,
+      'ders':ders,
+      'unvan':unvan,
+
 
   });
-  return Oekle( adisoyadi: adisoyadi, unvan: unvan, ders: ders);
+  return Oekle(id : documentRef.id,adisoyadi: adisoyadi,ders: ders,unvan: unvan);
 
  }
 
@@ -32,4 +33,5 @@ final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
     return ref;
   }
+
 }
