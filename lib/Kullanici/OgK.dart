@@ -1,17 +1,22 @@
+import 'package:dersprogrami/ogretmenlerK.dart';
 import 'package:dersprogrami/servisler/OgK_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 class OgK extends StatefulWidget {
-  const OgK({Key? key, required String gun, required String ders}) : super(key: key);
+  const OgK({Key? key, required String gun, required String ders, required String Oadi}) : super(key: key);
 
   @override
   State<OgK> createState() => _OgKState();
 }
 
 class _OgKState extends State<OgK> {
+  final TextEditingController _OadController =TextEditingController();
   final TextEditingController _gunController = TextEditingController();
   final TextEditingController _dersController = TextEditingController();
+   String gelenAd="";
+  var gelengun="";
+  var gelenDersad="";
   OgKService _ogKService = OgKService();
   @override
 
@@ -36,6 +41,21 @@ class _OgKState extends State<OgK> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
+                    TextField(
+                        controller: _OadController,
+                        maxLines: 2,
+                        decoration: InputDecoration(
+                          hintText: "Öğretmen Adı",
+                          enabledBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          focusedBorder: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                          border: UnderlineInputBorder(
+                            borderSide: BorderSide(color: Colors.white),
+                          ),
+                        )),
                     TextField(
                         controller: _gunController,
                         maxLines: 2,
@@ -71,8 +91,10 @@ class _OgKState extends State<OgK> {
                       child: InkWell(
                         onTap: () {
                         _ogKService
-                              .addOgK(_gunController.text , _dersController.text ,'')
+                              .addOgK(_OadController.text,_gunController.text , _dersController.text ,'')
                               .then((value) {
+                                setState(() {
+                                });
                             Fluttertoast.showToast(
                                 msg: "Eklendi!",
                                 timeInSecForIosWeb: 5,
@@ -81,7 +103,7 @@ class _OgKState extends State<OgK> {
                                 backgroundColor: Colors.grey[600],
                                 textColor: Colors.white,
                                 fontSize: 14);
-                            Navigator.pop(context);
+                            Navigator.push(context,MaterialPageRoute(builder: (context)  =>ogretmenlerK()));
                           });
                         },
                         child: Container(
