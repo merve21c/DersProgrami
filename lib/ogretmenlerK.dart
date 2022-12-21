@@ -23,7 +23,7 @@ class _ogretmenlerKState extends State<ogretmenlerK> {
           actions: <Widget>[
             IconButton( icon: Icon(Icons.date_range_outlined),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)  =>OgK(gun: '',ders: '',)));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)  =>OgK(Oadi: '',gun: '',ders: '',)));
                 }
             )
           ]
