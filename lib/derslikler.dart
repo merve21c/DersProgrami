@@ -1,4 +1,4 @@
-import 'package:dersprogrami/ekle_sil/drsliksil.dart';
+import 'package:dersprogrami/derslik_list.dart';
 import 'package:dersprogrami/ekle_sil/drslkekle.dart';
 import 'package:flutter/material.dart';
 
@@ -14,21 +14,17 @@ class _derslikState extends State<derslik> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("sil"),
+          title: Text("Derslik"),
           actions: <Widget>[
-            IconButton( icon: Icon(Icons.delete),
+            IconButton( icon: Icon(Icons.table_restaurant),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>derslikSil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>derslik()));
                 }
             )
           ]
       ),
       body: Center(
-        child: Icon(
-            Icons.table_restaurant,
-            color: Colors.blueGrey.shade300,
-            size: 300
-        ),
+        child:dersliklist(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
