@@ -18,7 +18,13 @@ class derslikekleService {
   //veri gösterme fonksiyonu
   //sayfadaki verilerin anlık değişimini göstermek için stream kullanıyoruz
   Stream<QuerySnapshot> getderslikekle() {
-    var ref = _firestore.collection("Şubeler").snapshots();
+    var ref = _firestore.collection("Derslik").snapshots();
+    return ref;
+  }
+  //veriyi silmek için
+  Future<void> removederslikekle(String docId) {
+    var ref = _firestore.collection("Derslik").doc(docId).delete();
+
     return ref;
   }
 }
