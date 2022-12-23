@@ -26,7 +26,7 @@ class _DekleState extends State<Dekle> {
         children: [
           Padding(padding: const EdgeInsets.all(8.0),
             child: Container(
-              height: size.height * .4,
+              height: size.height * .5,
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.blue, width: 2),
