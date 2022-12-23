@@ -1,4 +1,5 @@
 import 'package:dersprogrami/Kullanici/OgK.dart';
+import 'package:dersprogrami/OgrtmnekleK_list.dart';
 import 'package:dersprogrami/kullanici.dart';
 import 'package:flutter/material.dart';
 
@@ -27,6 +28,9 @@ class _ogretmenlerKState extends State<ogretmenlerK> {
                 }
             )
           ]
+      ),
+      body: Scrollbar(
+        child: OgKlist(),
       ),
       drawer: Drawer(
         child: ListView(
