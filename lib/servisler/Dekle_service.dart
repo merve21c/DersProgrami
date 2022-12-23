@@ -23,4 +23,10 @@ class DekleService {
     var ref = _firestore.collection("Ders Bilgileri").snapshots();
     return ref;
   }
+  //veriyi silmek için
+  Future<void> removeDekle(String docId) {
+    var ref = _firestore.collection("Ders Bilgileri").doc(docId).delete();
+
+    return ref;
+  }
 }
