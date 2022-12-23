@@ -1,5 +1,5 @@
+import 'package:dersprogrami/Ders_list.dart';
 import 'package:dersprogrami/ekle_sil/Dekle.dart';
-import 'package:dersprogrami/ekle_sil/Dsil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class dersler extends StatefulWidget {
@@ -14,21 +14,17 @@ class _derslerState extends State<dersler> {
   Widget build(BuildContext context) {
   return  Scaffold(
       appBar: AppBar(
-          title: Text("sil"),
+          title: Text("Ders Bilgileri"),
           actions: <Widget>[
-            IconButton( icon: Icon(Icons.delete),
+            IconButton( icon: Icon(Icons.my_library_books),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Dsil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>dersler()));
                 }
             )
           ]
       ),
-    body: Center(
-    child: Icon(
-    Icons.my_library_books,
-    color: Colors.blueGrey.shade300,
-    size: 300
-    ),
+    body: Scrollbar(
+    child:Dlist(),
     ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -68,14 +64,6 @@ class _derslerState extends State<dersler> {
           Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
         },
       ),
-    ListTile(
-          leading: Icon(Icons.my_library_books),
-          title: Text('matemmatik'),
-          trailing: Icon(Icons.arrow_right),
-          onTap: () {
-            Navigator.push(context,MaterialPageRoute(builder: (context)=> dersler()));
-          },
-        ),
     ],
     ),
   )
