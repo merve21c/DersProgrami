@@ -18,7 +18,13 @@ class LabekleService {
   //veri gösterme fonksiyonu
   //sayfadaki verilerin anlık değişimini göstermek için stream kullanıyoruz
   Stream<QuerySnapshot> getLabekle() {
-    var ref = _firestore.collection("Şubeler").snapshots();
+    var ref = _firestore.collection("Laboratuvar").snapshots();
+    return ref;
+  }
+  //veriyi silmek için
+  Future<void> removeLabekle(String docId) {
+    var ref = _firestore.collection("Laboratuvar").doc(docId).delete();
+
     return ref;
   }
 }
