@@ -18,8 +18,14 @@ class AmfiekleService {
 
   //veri gösterme fonksiyonu
   //sayfadaki verilerin anlık değişimini göstermek için stream kullanıyoruz
-  Stream<QuerySnapshot> getLabekle() {
-    var ref = _firestore.collection("Şubeler").snapshots();
+  Stream<QuerySnapshot> getAmfiekle() {
+    var ref = _firestore.collection("Amfi").snapshots();
+    return ref;
+  }
+  //veriyi silmek için
+  Future<void> removeAmfiekle(String docId) {
+    var ref = _firestore.collection("Amfi").doc(docId).delete();
+
     return ref;
   }
 }
