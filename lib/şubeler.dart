@@ -1,5 +1,6 @@
 import 'package:dersprogrami/Amfi.dart';
 import 'package:dersprogrami/Laboratuvar.dart';
+import 'package:dersprogrami/amfi_list.dart';
 import 'package:dersprogrami/derslikler.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
@@ -18,11 +19,7 @@ class _subelerState extends State<subeler> {
             title: Text("Şubeler"),
         ),
         body: Center(
-          child: Icon(
-              Icons.door_back_door_outlined,
-              color: Colors.blueGrey.shade300,
-              size: 300
-          ),
+          child:amfilist(),
         ),
         drawer: Drawer(
           child: ListView(
