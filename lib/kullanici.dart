@@ -1,3 +1,4 @@
+import 'package:dersprogrami/%C3%96kapasite.dart';
 import 'package:dersprogrami/derslerK.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
@@ -47,7 +48,7 @@ class _kullanici extends State<kullanici> {
             title: Text('Öğrenci kapasitesi'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> derslerK()));
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> Okapasite()));
             },
           ),
           ListTile(
