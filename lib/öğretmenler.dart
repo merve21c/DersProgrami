@@ -1,6 +1,5 @@
 import 'package:dersprogrami/O_list.dart';
 import 'package:dersprogrami/ekle_sil/Oekle.dart';
-import 'package:dersprogrami/ekle_sil/Osil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 
@@ -16,24 +15,18 @@ class _ogretmenlerState extends State<ogretmenler> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("sil"),
+          title: Text("Öğretmenler"),
           actions: <Widget>[
-            IconButton( icon: Icon(Icons.delete),
+            IconButton( icon: Icon(Icons.people_alt),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Osil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmenler()));
                 }
             )
           ]
       ),
-      body: Center(
+      body: Scrollbar(
         child: Olist(),
-      ),/*Center(
-        child: Icon(
-            Icons.people_alt,
-            color: Colors.blueGrey.shade300,
-            size: 300
-        ),
-      ),*/
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
