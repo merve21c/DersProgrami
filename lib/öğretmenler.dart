@@ -1,3 +1,4 @@
+import 'package:dersprogrami/O_list.dart';
 import 'package:dersprogrami/ekle_sil/Oekle.dart';
 import 'package:dersprogrami/ekle_sil/Osil.dart';
 import 'package:dersprogrami/yonetici.dart';
@@ -25,12 +26,14 @@ class _ogretmenlerState extends State<ogretmenler> {
           ]
       ),
       body: Center(
+        child: Olist(),
+      ),/*Center(
         child: Icon(
             Icons.people_alt,
             color: Colors.blueGrey.shade300,
             size: 300
         ),
-      ),
+      ),*/
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
