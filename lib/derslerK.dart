@@ -23,6 +23,7 @@ class _derslerKState extends State<derslerK> {
                     color: Colors.grey,
                     size: 30.0,
                   ),
+
                   Text(
                     "Derslik",
                     style: TextStyle(color: Colors.black, fontSize: 25.0),
