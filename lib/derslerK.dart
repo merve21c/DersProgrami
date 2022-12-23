@@ -19,12 +19,12 @@ class _derslerKState extends State<derslerK> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Icon(
-                    Icons.my_library_books,
+                    Icons.door_back_door_outlined,
                     color: Colors.grey,
                     size: 30.0,
                   ),
                   Text(
-                    "DERSLER",
+                    "Derslik",
                     style: TextStyle(color: Colors.black, fontSize: 25.0),
                   ),
                   ListTile(
