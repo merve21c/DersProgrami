@@ -1,6 +1,6 @@
 import 'package:dersprogrami/%C5%9Fubeler.dart';
+import 'package:dersprogrami/amfi_list.dart';
 import 'package:dersprogrami/ekle_sil/Aekle.dart';
-import 'package:dersprogrami/ekle_sil/Asil.dart';
 import 'package:flutter/material.dart';
 
 class Amfi extends StatefulWidget {
@@ -15,21 +15,17 @@ class _AmfiState extends State<Amfi> {
   Widget build(BuildContext context) {
     return   Scaffold(
       appBar: AppBar(
-          title: Text("sil"),
+          title: Text("Amfi"),
           actions: <Widget>[
-            IconButton( icon: Icon(Icons.delete),
+            IconButton( icon: Icon(Icons.door_back_door),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Amfisil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Amfi()));
                 }
             )
           ]
       ),
       body: Center(
-        child: Icon(
-            Icons.door_back_door,
-            color: Colors.blueGrey.shade300,
-            size: 300
-        ),
+        child: amfilist(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
