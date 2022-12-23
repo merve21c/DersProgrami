@@ -1,6 +1,6 @@
 import 'package:dersprogrami/%C5%9Fubeler.dart';
 import 'package:dersprogrami/ekle_sil/Labekle.dart';
-import 'package:dersprogrami/ekle_sil/Labsil.dart';
+import 'package:dersprogrami/lab_list.dart';
 import 'package:flutter/material.dart';
 
 class Laboratuvar extends StatefulWidget {
@@ -15,21 +15,17 @@ class _LaboratuvarState extends State<Laboratuvar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          title: Text("sil"),
+          title: Text("Laboratuvar"),
           actions: <Widget>[
-            IconButton( icon: Icon(Icons.delete),
+            IconButton( icon: Icon(Icons.computer),
                 onPressed: (){
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Labsil()));
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Laboratuvar()));
                 }
             )
           ]
       ),
       body: Center(
-        child: Icon(
-            Icons.computer,
-            color: Colors.blueGrey.shade300,
-            size: 300
-        ),
+        child:lablist(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
