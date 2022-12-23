@@ -22,4 +22,10 @@ class OgKService {
     var ref = _firestore.collection("Ders ve Günler").snapshots();
     return ref;
   }
+  //veriyi silmek için
+  Future<void> removeOgKekle(String docId) {
+    var ref = _firestore.collection("Ders ve Günler").doc(docId).delete();
+
+    return ref;
+  }
 }
