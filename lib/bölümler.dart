@@ -1,3 +1,4 @@
+import 'package:dersprogrami/B%C3%B6l%C3%BCm_list.dart';
 import 'package:dersprogrami/ekle_sil/Bekle.dart';
 import 'package:dersprogrami/ekle_sil/Bsil.dart';
 import 'package:dersprogrami/yonetici.dart';
@@ -14,21 +15,17 @@ class _bolumlerState extends State<bolumler> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: Text("Sil"),
+            title: Text("Bölümler"),
             actions: <Widget>[
-              IconButton( icon: Icon(Icons.delete),
+              IconButton( icon: Icon(Icons.play_lesson),
                   onPressed: (){
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Bsil()));   //sayfalar arası geçiş
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>bolumler()));   //sayfalar arası geçiş
                   }
               )
             ]
         ),
         body: Center(
-          child: Icon(
-              Icons.play_lesson,
-              color: Colors.blueGrey.shade300,
-              size: 300
-          ),
+          child: bolumlist(),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
