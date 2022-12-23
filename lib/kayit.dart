@@ -28,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage> {//kontroller
         children: [
           Padding(padding: const EdgeInsets.all(9.0),
             child: Container(
-              height: size.height * .5,
+              height: size.height * .7,
               decoration: BoxDecoration(
                   color: Colors.white,
                   border: Border.all(color: Colors.blue, width: 2),
