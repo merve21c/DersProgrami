@@ -81,7 +81,7 @@ class _bolumlistState extends State<bolumlist> {
                     _showChoiseDialog(context);
                   },
                   child: Container(
-                    height: size.height * .1,
+                    height: size.height * .4,
                     decoration: BoxDecoration(
                         color: Colors.white,
                         border: Border.all(color: Colors.blue, width: 2),
@@ -92,7 +92,35 @@ class _bolumlistState extends State<bolumlist> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("${mypost['bolumadi']}",
+                          Text("${mypost['bolumadiID']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("${mypost['gun']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("${mypost['dersadi']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("${mypost['dersOgretmeni']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("${mypost['dersSaati']}",
                             style: TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
