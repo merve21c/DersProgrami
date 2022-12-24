@@ -5,12 +5,16 @@ class BekleService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
-  Future<Bekle> addBekle(String bolumadi , String text) async {
+  Future<Bekle> addBekle(String bolumadiID ,String gun, String dersadi,String dersOgretmeni,String dersSaati, String text) async {
     var ref = _firestore.collection(
         "Bölümler"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
 
-     'bolumadi':bolumadi,
+     'bolumadiID':bolumadiID,
+      'gun':gun,
+      'dersadi':dersadi,
+      'dersOgretmeni':dersOgretmeni,
+      'dersSaati':dersSaati,
     });
     return Bekle();
   }
