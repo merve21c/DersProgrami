@@ -18,12 +18,17 @@ class _yoneticiState extends State<yonetici> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: Center(
-        child: Icon(
-            Icons.person,
-            color: Colors.blueGrey.shade300,
-            size: 300
-        ),
+      body: Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text("Ders"),
+          Text("Şube"),
+          Text("Öğretmen"),
+          Text("Bölüm"),
+          Text("Gün"),
+        ],
+      ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
