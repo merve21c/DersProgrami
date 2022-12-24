@@ -1,6 +1,5 @@
 import 'package:dersprogrami/B%C3%B6l%C3%BCm_list.dart';
 import 'package:dersprogrami/ekle_sil/Bekle.dart';
-import 'package:dersprogrami/ekle_sil/Bsil.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class bolumler extends StatefulWidget {
