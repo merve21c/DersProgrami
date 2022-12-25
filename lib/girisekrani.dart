@@ -1,5 +1,6 @@
 import 'package:dersprogrami/Kgiris.dart';
 import 'package:dersprogrami/Ygiris.dart';
+import 'package:dersprogrami/kullanici.dart';
 import 'package:flutter/material.dart';
 
 class girisekrani extends StatefulWidget {
@@ -25,7 +26,7 @@ class _girisekraniState extends State<girisekrani> {
           Navigator.push(
               context,
               MaterialPageRoute(
-                  builder: (context) => Kgiris()));
+                  builder: (context) =>kullanici()));
         },
       ),
       ElevatedButton(
