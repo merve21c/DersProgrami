@@ -23,7 +23,7 @@ class _BekleState extends State<Bekle> {
       appBar: AppBar(
         title: Text("Bölüm Ekle"),
       ),
-      body:SingleChildScrollView(
+      body:SingleChildScrollView(     //kaydırma çubuğu
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
