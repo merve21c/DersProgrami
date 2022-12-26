@@ -8,7 +8,7 @@ class bolumlist extends StatefulWidget {
 }
 
 class _bolumlistState extends State<bolumlist> {
- BekleService _bekleService =BekleService();
+  BekleService _bekleService =BekleService();
 
   @override
   Widget build(BuildContext context) {
