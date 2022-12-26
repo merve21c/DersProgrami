@@ -1,6 +1,5 @@
 import 'package:dersprogrami/%C3%96kapasite.dart';
 import 'package:dersprogrami/dersP.dart';
-import 'package:dersprogrami/derslerK.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
 import 'package:flutter/material.dart';
@@ -34,37 +33,36 @@ class _kullanici extends State<kullanici> {
               ),
             ),
           ),
-
-          ListTile(                                   //listviewlarrımıza detaylı eklemeler(icon vs) yapabilmek için bu widgeti kullanıyoruz
-            leading: Icon(Icons.door_back_door_outlined),
-            title: Text('Derslik'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> derslerK()));
-            },
+          ExpansionTile(
+            leading: Icon(Icons.people),
+            title: Text('ÖĞRETMENLER'),
+            trailing: Icon(Icons.arrow_drop_down),
+            children: <Widget>[
+              ListTile(
+                title: Text('Öğretmen Bilgileri'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ogretmenlerK()));
+                },
+              ),
+    ],
           ),
 
+
+           ListTile(
+            leading: Icon(Icons.date_range),
+            title: Text('Ders Programı'),
+            trailing: Icon(Icons.arrow_right),
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>dersP()));
+            },
+          ),
           ListTile(
             leading: Icon(Icons.people_outline),
             title: Text('Öğrenci kapasitesi'),
             trailing: Icon(Icons.arrow_right),
             onTap: () {
               Navigator.push(context,MaterialPageRoute(builder: (context)=> Okapasite()));
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.people_alt),
-            title: Text('Öğretmenler'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>ogretmenlerK()));
-            },
-          ), ListTile(
-            leading: Icon(Icons.date_range),
-            title: Text('Ders Programı'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>dersP()));
             },
           ),
           ListTile(
