@@ -70,8 +70,11 @@ class _bolumlistState extends State<bolumlist> {
                                     ),
                                   ),
                                 ],
-                              )));
-                    });
+                              )
+                          )
+                      );
+                    }
+                  );
               }
 
               return Padding(
