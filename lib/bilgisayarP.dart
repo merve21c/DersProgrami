@@ -1,7 +1,5 @@
-import 'package:dersprogrami/B%C3%B6l%C3%BCm_list.dart';
 import 'package:dersprogrami/Bilgisayar_list.dart';
-import 'package:dersprogrami/ekle_sil/Bekle.dart';
-import 'package:dersprogrami/ekle_sil/veriekle.dart';
+import 'package:dersprogrami/ekle_sil/BilgisayarDersPekle.dart';
 import 'package:flutter/material.dart';
 
 
@@ -32,7 +30,7 @@ class _BilgisayarState extends State<Bilgisayar> {
     floatingActionButton: FloatingActionButton(
     onPressed: () {
     Navigator.push(context,
-    MaterialPageRoute(builder: (context) =>Veriekle()));
+    MaterialPageRoute(builder: (context) =>BilgisayarDersP()));
     },
     child: Icon(Icons.add),
     ),
