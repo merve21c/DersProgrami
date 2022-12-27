@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dersprogrami/servisler/veriler.dart';
+import 'package:dersprogrami/servisler/Bekle_service.dart';
 import 'package:flutter/material.dart';
 
 class bilgisayarlist extends StatefulWidget {
@@ -8,15 +8,15 @@ class bilgisayarlist extends StatefulWidget {
   @override
   State<bilgisayarlist> createState() => _bilgisayarlistState();
 }
+BekleService _bekleService=BekleService();
 
 class _bilgisayarlistState extends State<bilgisayarlist> {
-  VeriekleService _veriekleService =VeriekleService();
   @override
   Widget build(BuildContext context) {
   var size = MediaQuery.of(context).size;
 
     return StreamBuilder<QuerySnapshot>(
-      stream: _veriekleService.getVeriekle(),
+      stream: _bekleService.getBekle(),
       builder: (context, snapshot) {
         return !snapshot.hasData
             ? CircularProgressIndicator()
@@ -48,8 +48,8 @@ class _bilgisayarlistState extends State<bilgisayarlist> {
                                 children: <Widget>[
                                   GestureDetector(
                                     onTap: () {
-                                      _veriekleService
-                                          .removeVeriekle(mypost.id);
+                                      _bekleService
+                                          .removeBekle(mypost.id);
                                       Navigator.pop(context);
                                     },
                                     child: Text(
@@ -125,13 +125,6 @@ class _bilgisayarlistState extends State<bilgisayarlist> {
                             height: 10,
                           ),
                           Text("${mypost['dersSaati']}",
-                            style: TextStyle(fontSize: 16),
-                            textAlign: TextAlign.center,
-                          ),
-                          SizedBox(
-                            height: 10,
-                          ),
-                          Text("${mypost['amfi']}",
                             style: TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
