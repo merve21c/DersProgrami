@@ -1,5 +1,7 @@
-import 'package:dersprogrami/B%C3%B6l%C3%BCm_list.dart';
-import 'package:dersprogrami/ekle_sil/Bekle.dart';
+import 'package:dersprogrami/Lojistik.dart';
+import 'package:dersprogrami/bilgisayarP.dart';
+import 'package:dersprogrami/muhasebe.dart';
+import 'package:dersprogrami/sosyalhizmetler.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class bolumler extends StatefulWidget {
@@ -23,18 +25,6 @@ class _bolumlerState extends State<bolumler> {
               )
             ]
         ),
-        body: Center(
-          child: bolumlist(),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) =>Bekle()));
-          },
-          child: Icon(Icons.add),
-        ),
-
-
         drawer: Drawer(
           child: ListView(
             padding: EdgeInsets.zero,
@@ -56,6 +46,31 @@ class _bolumlerState extends State<bolumler> {
                     ],
                   ),
                 ),
+              ),
+              ListTile(
+                leading: Icon(Icons.laptop_chromebook_outlined),
+                title: Text('Bilgisayar Programcılığı'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Bilgisayar()));
+                },
+              ),  ListTile(
+                leading: Icon(Icons.people_alt_rounded),
+                title: Text('Sosyal Hizmetler'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Sosyalhizmet()));
+                },
+              ),  ListTile(
+                leading: Icon(Icons.calculate_outlined),
+                title: Text('Muhasebe'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Muhasebe()));
+                },
+              ),  ListTile(
+                leading: Icon(Icons.fire_truck_sharp),
+                title: Text('Lojistik'),
+                onTap: () {
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Lojistik()));
+                },
               ),
               ListTile(
                 leading: Icon(Icons.keyboard_return),
