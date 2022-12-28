@@ -1,4 +1,6 @@
 import 'package:dersprogrami/ekle_sil/BilgisayarSubeAcBtn.dart';
+import 'package:dersprogrami/ekle_sil/LojistikSubeAcBtn.dart';
+import 'package:dersprogrami/ekle_sil/MuhasebeSubeAcBtn.dart';
 import 'package:dersprogrami/ekle_sil/SosyalHSubeAcBtn.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
@@ -62,13 +64,13 @@ class _subelerState extends State<subeler> {
                 leading: Icon(Icons.calculate_outlined),
                 title: Text('Muhasebe'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>MuhasebeSubeAcBtn()));
                 },
               ), ListTile(
                 leading: Icon(Icons.fire_truck),
                 title: Text('Lojistik'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LojistikSubeAcBtn()));
                 },
               ),
               ListTile(
