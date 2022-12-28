@@ -1,22 +1,22 @@
-import 'package:dersprogrami/servisler/bilgisayarE_service.dart';
+import 'package:dersprogrami/servisler/bilgisayardersP_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
-class BilgisayarDersP extends StatefulWidget {
-  const BilgisayarDersP({Key? key}) : super(key: key);
+class BilgisayarDersPekle extends StatefulWidget {
+  const BilgisayarDersPekle({Key? key}) : super(key: key);
 
 
   @override
-  State<BilgisayarDersP> createState() => _BilgisayarDersPState();
+  State<BilgisayarDersPekle> createState() => _BilgisayarDersPekleState();
 }
 
-class _BilgisayarDersPState extends State<BilgisayarDersP> {
+class _BilgisayarDersPekleState extends State<BilgisayarDersPekle> {
   final TextEditingController _bolumadiIDController = TextEditingController();
   final TextEditingController _gunController = TextEditingController();
   final TextEditingController _dersadiController = TextEditingController();
   final TextEditingController _dersOgretmeniController =TextEditingController();
   final TextEditingController _dersSaatiController = TextEditingController();
-  final TextEditingController _amfiController = TextEditingController();
+  final TextEditingController _labController = TextEditingController();
   BilgisayarService _bilgisayarService=BilgisayarService();
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class _BilgisayarDersPState extends State<BilgisayarDersP> {
           children: [
             Padding(padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: size.height * .6,
+                height: size.height * .7,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(color: Colors.blue, width: 2),
@@ -116,12 +116,27 @@ class _BilgisayarDersPState extends State<BilgisayarDersP> {
                               borderSide: BorderSide(color: Colors.white),
                             ),
                           )),
+                      TextField(
+                          controller: _labController,
+                          maxLines: 2,
+                          decoration: InputDecoration(
+                            hintText: " Ders Saati",
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            border: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                          )),
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 25),
                         child: InkWell(
                           onTap: () {
                             _bilgisayarService
-                                .addBilgisayarDersPekle(_bolumadiIDController.text ,_gunController.text,_dersadiController.text,_dersOgretmeniController.text,_dersSaatiController.text,_amfiController.text,'')
+                                .addBilgisayarDersPekle(_bolumadiIDController.text ,_gunController.text,_dersadiController.text,_dersOgretmeniController.text,_dersSaatiController.text,_labController.text,'')
                                 .then((value) {
                               Fluttertoast.showToast(
                                   msg: "Ders Programı eklendi!",
