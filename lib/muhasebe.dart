@@ -1,7 +1,7 @@
-import 'package:dersprogrami/B%C3%B6l%C3%BCm_list.dart';
+import 'package:dersprogrami/ekle_sil/MuhasebeDersePkle.dart';
+import 'package:dersprogrami/muhasebe_list.dart';
 import 'package:flutter/material.dart';
 
-import 'ekle_sil/Bekle.dart';
 
 class Muhasebe extends StatefulWidget {
   const Muhasebe({Key? key}) : super(key: key);
@@ -25,12 +25,12 @@ class _MuhasebeState extends State<Muhasebe> {
           ]
       ),
       body: Center(
-        child: bolumlist(),
+        child: muhasebelist(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Bekle()));
+              MaterialPageRoute(builder: (context) =>MuhasebeDersP()));
         },
         child: Icon(Icons.add),
       ),
