@@ -124,7 +124,7 @@ class _SosyalHDersPState extends State<SosyalHDersP> {
                         child: InkWell(
                           onTap: () {
                             _sosyalhService
-                                .addBilgisayarDersPekle(_bolumadiIDController.text ,_gunController.text,_dersadiController.text,_dersOgretmeniController.text,_dersSaatiController.text,_amfiController.text,'')
+                                .addSosyalHDersP(_bolumadiIDController.text ,_gunController.text,_dersadiController.text,_dersOgretmeniController.text,_dersSaatiController.text,_amfiController.text,'')
                                 .then((value) {
                               Fluttertoast.showToast(
                                   msg: "Ders Programı eklendi!",
