@@ -1,5 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dersprogrami/servisler/Bekle_service.dart';
+import 'package:dersprogrami/servisler/bilgisayarE_service.dart';
 import 'package:flutter/material.dart';
 
 class bilgisayarlist extends StatefulWidget {
@@ -8,7 +8,7 @@ class bilgisayarlist extends StatefulWidget {
   @override
   State<bilgisayarlist> createState() => _bilgisayarlistState();
 }
-BekleService _bekleService=BekleService();
+BilgisayarService _bilgisayarService=BilgisayarService();
 
 class _bilgisayarlistState extends State<bilgisayarlist> {
   @override
@@ -16,7 +16,7 @@ class _bilgisayarlistState extends State<bilgisayarlist> {
   var size = MediaQuery.of(context).size;
 
     return StreamBuilder<QuerySnapshot>(
-      stream: _bekleService.getBekle(),
+      stream: _bilgisayarService.getBilgisayarDersPekle(),
       builder: (context, snapshot) {
         return !snapshot.hasData
             ? CircularProgressIndicator()
@@ -48,8 +48,8 @@ class _bilgisayarlistState extends State<bilgisayarlist> {
                                 children: <Widget>[
                                   GestureDetector(
                                     onTap: () {
-                                      _bekleService
-                                          .removeBekle(mypost.id);
+                                      _bilgisayarService
+                                          .removeBilgisayarDersPekle(mypost.id);
                                       Navigator.pop(context);
                                     },
                                     child: Text(
