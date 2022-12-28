@@ -1,6 +1,4 @@
-import 'package:dersprogrami/Amfi.dart';
-import 'package:dersprogrami/Laboratuvar.dart';
-import 'package:dersprogrami/derslikler.dart';
+import 'package:dersprogrami/ekle_sil/BilgisayarSubeAc.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class subeler extends StatefulWidget {
@@ -48,33 +46,38 @@ class _subelerState extends State<subeler> {
                 ),
               ),
               ListTile(
+                leading: Icon(Icons.laptop_chromebook_outlined),
+                title: Text('Bilgisayar Programcılığı'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BilgisayarSubeAc()));
+                },
+              ), ListTile(
+                leading: Icon(Icons.reduce_capacity),
+                title: Text('Sosyal Hizmetler'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
+                },
+              ), ListTile(
+                leading: Icon(Icons.calculate_outlined),
+                title: Text('Muhasebe'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
+                },
+              ), ListTile(
+                leading: Icon(Icons.fire_truck),
+                title: Text('Lojistik'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
+                },
+              ),
+              ListTile(
                 leading: Icon(Icons.keyboard_return),
-                title: Text('Geri dön'),
+                title: Text('Geri Dön'),
                 onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> yonetici()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
                 },
               ),
-              ListTile(
-                leading: Icon(Icons.table_restaurant),
-                title: Text('Derslik'),
-                onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> derslik()));
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.computer),
-                title: Text('Laboratuvar'),
-                onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=> Laboratuvar()));
-                },
-              ),
-              ListTile(
-                leading: Icon(Icons.door_back_door),
-                title: Text('Amfi'),
-                onTap: () {
-                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Amfi()));
-                },
-              ),
+
             ],
           ),
         )
