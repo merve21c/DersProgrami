@@ -1,4 +1,3 @@
-import 'package:dersprogrami/%C3%96kapasite.dart';
 import 'package:dersprogrami/dersP.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
@@ -47,9 +46,28 @@ class _kullanici extends State<kullanici> {
               ),
     ],
           ),
-
-
-           ListTile(
+          ExpansionTile(
+            leading: Icon(Icons.reduce_capacity),
+            title: Text('KAPASİTE'),
+            trailing: Icon(Icons.arrow_drop_down),
+            children: <Widget>[
+              ListTile(
+                title: Text('Öğrenci Kapasitesi'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ogretmenlerK()));
+                },
+              ),
+              ListTile(
+                title: Text('Derslik Kapasitesi'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ogretmenlerK()));
+                },
+              ),
+            ],
+          ),
+          ListTile(
             leading: Icon(Icons.date_range),
             title: Text('Ders Programı'),
             trailing: Icon(Icons.arrow_right),
@@ -57,14 +75,8 @@ class _kullanici extends State<kullanici> {
               Navigator.push(context,MaterialPageRoute(builder: (context)=>dersP()));
             },
           ),
-          ListTile(
-            leading: Icon(Icons.people_outline),
-            title: Text('Öğrenci kapasitesi'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> Okapasite()));
-            },
-          ),
+
+
           ListTile(
             leading: Icon(Icons.power_settings_new_outlined),
             title: Text('Çıkış yap'),
