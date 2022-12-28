@@ -30,7 +30,7 @@ class _BilgisayarState extends State<Bilgisayar> {
     floatingActionButton: FloatingActionButton(
     onPressed: () {
     Navigator.push(context,
-    MaterialPageRoute(builder: (context) =>BilgisayarDersP()));
+    MaterialPageRoute(builder: (context) =>BilgisayarDersPekle()));
     },
     child: Icon(Icons.add),
     ),
