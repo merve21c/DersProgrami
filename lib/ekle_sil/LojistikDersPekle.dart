@@ -30,7 +30,7 @@ class _LojistikDersPekleState extends State<LojistikDersPekle> {
           children: [
             Padding(padding: const EdgeInsets.all(8.0),
               child: Container(
-                height: size.height * .6,
+                height: size.height * .7,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     border: Border.all(color: Colors.blue, width: 2),
@@ -105,6 +105,21 @@ class _LojistikDersPekleState extends State<LojistikDersPekle> {
                           maxLines: 2,
                           decoration: InputDecoration(
                             hintText: " Ders Saati",
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            focusedBorder: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                            border: UnderlineInputBorder(
+                              borderSide: BorderSide(color: Colors.white),
+                            ),
+                          )),
+                      TextField(
+                          controller: _amfiController,
+                          maxLines: 2,
+                          decoration: InputDecoration(
+                            hintText: " Derslik veya Amfi",
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                             ),
