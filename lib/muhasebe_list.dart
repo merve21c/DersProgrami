@@ -131,6 +131,13 @@ class _muhasebelistState extends State<muhasebelist> {
                           SizedBox(
                             height: 10,
                           ),
+                          Text("${mypost['amfi']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
                         ],
                       ),
                     ),
