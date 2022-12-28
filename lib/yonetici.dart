@@ -47,16 +47,8 @@ class _yoneticiState extends State<yonetici> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.my_library_books),
-              title: Text('Ders Bilgileri'),
-              trailing: Icon(Icons.arrow_right),
-              onTap: () {
-                Navigator.push(context,MaterialPageRoute(builder: (context)=> dersler()));
-              },
-            ),
-            ListTile(
               leading: Icon(Icons.door_back_door_outlined),
-              title: Text('Derslikler'),
+              title: Text('Şubeler'),
               trailing: Icon(Icons.arrow_right),
               onTap: () {
                 Navigator.push(context,MaterialPageRoute(builder: (context)=> subeler()));
