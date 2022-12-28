@@ -1,4 +1,5 @@
-import 'package:dersprogrami/ekle_sil/BilgisayarSubeAc.dart';
+import 'package:dersprogrami/ekle_sil/BilgisayarSubeAcBtn.dart';
+import 'package:dersprogrami/ekle_sil/SosyalHSubeAcBtn.dart';
 import 'package:dersprogrami/yonetici.dart';
 import 'package:flutter/material.dart';
 class subeler extends StatefulWidget {
@@ -49,13 +50,13 @@ class _subelerState extends State<subeler> {
                 leading: Icon(Icons.laptop_chromebook_outlined),
                 title: Text('Bilgisayar Programcılığı'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BilgisayarSubeAc()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>BilgisayarSubeAcBtn()));
                 },
               ), ListTile(
                 leading: Icon(Icons.reduce_capacity),
                 title: Text('Sosyal Hizmetler'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>yonetici()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SosyalHSubeAcBtn()));
                 },
               ), ListTile(
                 leading: Icon(Icons.calculate_outlined),
