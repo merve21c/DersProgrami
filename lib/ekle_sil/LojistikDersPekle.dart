@@ -1,7 +1,6 @@
+import 'package:dersprogrami/servisler/Lojistik_service.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-
-import '../servisler/lojistik_service.dart';
 
 class LojistikDersPekle extends StatefulWidget {
   const LojistikDersPekle({Key? key}) : super(key: key);
@@ -14,21 +13,18 @@ class _LojistikDersPekleState extends State<LojistikDersPekle> {
   final TextEditingController _bolumadiIDController = TextEditingController();
   final TextEditingController _gunController = TextEditingController();
   final TextEditingController _dersadiController = TextEditingController();
-  final TextEditingController _dersOgretmeniController = TextEditingController();
+  final TextEditingController _dersOgretmeniController =TextEditingController();
   final TextEditingController _dersSaatiController = TextEditingController();
   final TextEditingController _amfiController = TextEditingController();
-  LojistikService _lojistikDersPService = LojistikService();
-
+  LojistikService _lojistikService=LojistikService();
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery
-        .of(context)
-        .size;
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         title: Text("Ders Programı Ekle"),
       ),
-      body: SingleChildScrollView( //kaydırma çubuğu
+      body:SingleChildScrollView(     //kaydırma çubuğu
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -119,35 +115,12 @@ class _LojistikDersPekleState extends State<LojistikDersPekle> {
                               borderSide: BorderSide(color: Colors.white),
                             ),
                           )),
-                      TextField(
-                          controller: _amfiController,
-                          maxLines: 2,
-                          decoration: InputDecoration(
-                            hintText: "Amfi veya Derslik",
-                            enabledBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            focusedBorder: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                            border: UnderlineInputBorder(
-                              borderSide: BorderSide(color: Colors.white),
-                            ),
-                          )),
                       Padding(
-                        padding: const EdgeInsets.only(
-                            left: 8.0, right: 8, bottom: 25),
+                        padding: const EdgeInsets.only(left: 8.0, right: 8, bottom: 25),
                         child: InkWell(
                           onTap: () {
-                            _lojistikDersPService
-                                .addLojistikDersPekle(
-                                _bolumadiIDController.text,
-                                _gunController.text,
-                                _dersadiController.text,
-                                _dersOgretmeniController.text,
-                                _dersSaatiController.text,
-                                _amfiController.text,
-                                '')
+                            _lojistikService
+                                .addLojistikDersPekle(_bolumadiIDController.text ,_gunController.text,_dersadiController.text,_dersOgretmeniController.text,_dersSaatiController.text,_amfiController.text,'')
                                 .then((value) {
                               Fluttertoast.showToast(
                                   msg: "Ders Programı eklendi!",
@@ -163,11 +136,9 @@ class _LojistikDersPekleState extends State<LojistikDersPekle> {
                           child: Container(
                             padding: EdgeInsets.symmetric(vertical: 5),
                             decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: Colors.blue, width: 2),
+                                border: Border.all(color: Colors.blue, width: 2),
                                 //color: colorPrimaryShade,
-                                borderRadius: BorderRadius.all(
-                                    Radius.circular(30))),
+                                borderRadius: BorderRadius.all(Radius.circular(30))),
                             child: Padding(
                               padding: const EdgeInsets.all(5.0),
                               child: Center(
@@ -183,6 +154,8 @@ class _LojistikDersPekleState extends State<LojistikDersPekle> {
                         ),
                       ),
                     ],
+
+
 
 
                   ),
