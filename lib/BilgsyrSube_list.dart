@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dersprogrami/servisler/SubeAc_service.dart';
 import 'package:flutter/material.dart';
+
+import 'servisler/BilgisayarSube_service.dart';
 
 class BilgisayarSubeAclist extends StatefulWidget {
   const BilgisayarSubeAclist({Key? key}) : super(key: key);
@@ -10,13 +11,13 @@ class BilgisayarSubeAclist extends StatefulWidget {
 }
 
 class _BilgisayarSubeAclistState extends State<BilgisayarSubeAclist> {
-  SubeAcService _subeAcService =SubeAcService();
+  BilgisayarSubeService _bilgisayarSubeService = BilgisayarSubeService();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
 
     return StreamBuilder<QuerySnapshot>(
-      stream: _subeAcService.getSubeAc(),
+      stream: _bilgisayarSubeService.getBilgisayarSubeAc(),
       builder: (context, snapshot) {
         return !snapshot.hasData
             ? CircularProgressIndicator()
@@ -48,8 +49,8 @@ class _BilgisayarSubeAclistState extends State<BilgisayarSubeAclist> {
                                 children: <Widget>[
                                   GestureDetector(
                                     onTap: () {
-                                      _subeAcService
-                                          .removeSubeAc(mypost.id);
+                                      _bilgisayarSubeService
+                                          .removeBilgisayarSubeAc(mypost.id);
                                       Navigator.pop(context);
                                     },
                                     child: Text(
