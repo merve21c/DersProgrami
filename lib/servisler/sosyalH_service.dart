@@ -6,7 +6,7 @@ class SosyalHService{
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
-  Future<SosyalHDersP> addBilgisayarDersPekle(String bolumadiID ,String gun, String dersadi,String dersOgretmeni,String dersSaati,String amfi, String text) async {
+  Future<SosyalHDersP> addSosyalHDersP(String bolumadiID ,String gun, String dersadi,String dersOgretmeni,String dersSaati,String amfi, String text) async {
     var ref = _firestore.collection(
         "Sosyal Hizmet Ders Programı"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
@@ -23,12 +23,12 @@ class SosyalHService{
 
   //veri gösterme fonksiyonu
   //sayfadaki verilerin anlık değişimini göstermek için stream kullanıyoruz
-  Stream<QuerySnapshot> getBilgisayarDersPekle() {
+  Stream<QuerySnapshot> getSosyalHDersP() {
     var ref = _firestore.collection("Sosyal Hizmet Ders Programı").snapshots();
     return ref;
   }
   //veriyi silmek için
-  Future<void> removeBilgisayarDersPekle(String docId) {
+  Future<void> removeSosyalHDersP(String docId) {
     var ref = _firestore.collection("Sosyal Hizmet Ders Programı").doc(docId).delete();
 
     return ref;
