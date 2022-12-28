@@ -1,4 +1,6 @@
 import 'package:dersprogrami/B%C3%B6l%C3%BCm_list.dart';
+import 'package:dersprogrami/Sosyalhizmet_list.dart';
+import 'package:dersprogrami/ekle_sil/SosyalHDersPekle.dart';
 import 'package:flutter/material.dart';
 
 import 'ekle_sil/Bekle.dart';
@@ -25,12 +27,12 @@ class _SosyalhizmetState extends State<Sosyalhizmet> {
           ]
       ),
       body: Center(
-        child: bolumlist(),
+        child:SosyalHList(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) =>Bekle()));
+              MaterialPageRoute(builder: (context) =>SosyalHDersP()));
         },
         child: Icon(Icons.add),
       ),
