@@ -1,4 +1,5 @@
-import 'package:dersprogrami/kullanici.dart';
+import 'package:dersprogrami/Ogrkapasite_list.dart';
+import 'package:dersprogrami/ekle_sil/OgrKapasiteEkle.dart';
 import 'package:flutter/material.dart';
 
 class Okapasite extends StatefulWidget {
@@ -11,35 +12,26 @@ class Okapasite extends StatefulWidget {
 class _OkapasiteState extends State<Okapasite> {
   @override
   Widget build(BuildContext context) {
-    return   Drawer(
-      child: ListView(
-        children: <Widget>[
-          DrawerHeader(
-            child: Align(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Icon(
-                    Icons.people_outline,
-                    color: Colors.grey,
-                    size: 30.0,
-                  ),
-                  Text(
-                    "Kapasite",
-                    style: TextStyle(color: Colors.black, fontSize: 25.0),
-                  ),
-                  ListTile(
-                    title: Text('geri dön'),
-                    trailing: Icon(Icons.arrow_back),
-                    onTap: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context)=> kullanici()));
-                    },
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ],
+    return  Scaffold(
+      appBar: AppBar(
+          title: Text("Öğrenci Kapasitesi"),
+          actions: <Widget>[
+            IconButton( icon: Icon(Icons.reduce_capacity),
+                onPressed: (){
+                  Navigator.push(context,MaterialPageRoute(builder: (context)=>Okapasite()));   //sayfalar arası geçiş
+                }
+            )
+          ]
+      ),
+      body: Scrollbar(
+        child: OgrkapasiteList(),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) =>OgrKapasiteEkle()));
+        },
+        child: Icon(Icons.add),
       ),
     );
   }
