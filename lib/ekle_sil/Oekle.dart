@@ -25,7 +25,8 @@ class _OekleState extends State<Oekle> {
       appBar: AppBar(
         title: Text("Öğretmen ekle"),
       ),
-      body: Column(
+      body: SingleChildScrollView(
+      child:Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(padding: const EdgeInsets.all(8.0),
@@ -133,6 +134,7 @@ class _OekleState extends State<Oekle> {
       ),
           ),
         ],
+      ),
       ),
     );
   }
