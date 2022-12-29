@@ -1,4 +1,6 @@
 import 'package:dersprogrami/%C3%96kapasite.dart';
+import 'package:dersprogrami/DerslikKapasite.dart';
+import 'package:dersprogrami/ekle_sil/DerslikKapasiteEkle.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:dersprogrami/kullan%C4%B1c%C4%B1dersp/MuhasebedP.dart';
 import 'package:dersprogrami/kullan%C4%B1c%C4%B1dersp/bilgisayarP.dart';
@@ -66,7 +68,7 @@ class _kullanici extends State<kullanici> {
                 title: Text('Derslik Kapasitesi'),
                 trailing: Icon(Icons.arrow_right),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ogretmenlerK()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DerslikKapasite()));
                 },
               ),
             ],
