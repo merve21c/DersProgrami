@@ -2,7 +2,6 @@ import 'package:dersprogrami/%C3%B6%C4%9Fretmenler.dart';
 import 'package:dersprogrami/%C5%9Fubeler.dart';
 import 'package:dersprogrami/b%C3%B6l%C3%BCmler.dart';
 import 'package:dersprogrami/y%C3%B6netici/bildirim.dart';
-import 'package:dersprogrami/dersler.dart';
 import 'package:dersprogrami/girisekrani.dart';
 import 'package:flutter/material.dart';
 
