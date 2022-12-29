@@ -8,9 +8,9 @@ class bilgisayarlist extends StatefulWidget {
   @override
   State<bilgisayarlist> createState() => _bilgisayarlistState();
 }
-BilgisayarService _bilgisayarService=BilgisayarService();
 
 class _bilgisayarlistState extends State<bilgisayarlist> {
+  BilgisayarService _bilgisayarService=BilgisayarService();
   @override
   Widget build(BuildContext context) {
   var size = MediaQuery.of(context).size;
@@ -125,6 +125,13 @@ class _bilgisayarlistState extends State<bilgisayarlist> {
                             height: 10,
                           ),
                           Text("${mypost['dersSaati']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text("${mypost['lab']}",
                             style: TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
