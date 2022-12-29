@@ -1,3 +1,4 @@
+import 'package:dersprogrami/%C3%96grM%C3%BCsaitGn.dart';
 import 'package:dersprogrami/O_list.dart';
 import 'package:dersprogrami/ekle_sil/Oekle.dart';
 import 'package:dersprogrami/yonetici.dart';
@@ -57,6 +58,13 @@ class _ogretmenlerState extends State<ogretmenler> {
                 ],
               ),
             ),
+          ),
+          ListTile(
+            title: Text('Dersler Ve Müsait Günler'),
+            trailing: Icon(Icons.arrow_right),
+            onTap: () {
+              Navigator.push(context,MaterialPageRoute(builder: (context)=>ogrMusaitgun()));
+            },
           ),
 
           ListTile(
