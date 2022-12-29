@@ -22,7 +22,7 @@ class _dersPState extends State<dersP> {
     )
     ]
     ),
-    body: Scrollbar(
+    body: SingleChildScrollView(
     child:bolumlist(),
     ),
 
