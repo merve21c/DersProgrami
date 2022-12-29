@@ -120,7 +120,7 @@ class _BilgisayarDersPekleState extends State<BilgisayarDersPekle> {
                           controller: _labController,
                           maxLines: 2,
                           decoration: InputDecoration(
-                            hintText: " Ders Saati",
+                            hintText: " Laboratuvar",
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(color: Colors.white),
                             ),
