@@ -1,11 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dersprogrami/ekle_sil/BilgisayarDersPekle.dart';
+import '../bilgisayarP.dart';
 
 class BilgisayarService{
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 // veri ekleme fonksiyonu
-  Future<BilgisayarDersPekle> addBilgisayarDersPekle(String bolumadiID ,String gun, String dersadi,String dersOgretmeni,String dersSaati,String lab, String text) async {
+  Future<Bilgisayar> addBilgisayarDersPekle(String bolumadiID ,String gun, String dersadi,String dersOgretmeni,String dersSaati,String lab, String text) async {
     var ref = _firestore.collection(
         "Bilgisayar Ders Programı"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
@@ -17,7 +17,7 @@ class BilgisayarService{
       'dersSaati':dersSaati,
       'lab':lab,
     });
-    return BilgisayarDersPekle();
+    return Bilgisayar();
   }
 
   //veri gösterme fonksiyonu
