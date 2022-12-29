@@ -1,5 +1,8 @@
-import 'package:dersprogrami/dersP.dart';
 import 'package:dersprogrami/girisekrani.dart';
+import 'package:dersprogrami/kullan%C4%B1c%C4%B1dersp/MuhasebedP.dart';
+import 'package:dersprogrami/kullan%C4%B1c%C4%B1dersp/bilgisayarP.dart';
+import 'package:dersprogrami/kullan%C4%B1c%C4%B1dersp/lojistikdP.dart';
+import 'package:dersprogrami/kullan%C4%B1c%C4%B1dersp/sosyalHdP.dart';
 import 'package:dersprogrami/ogretmenlerK.dart';
 import 'package:flutter/material.dart';
 class kullanici  extends StatefulWidget {
@@ -67,16 +70,45 @@ class _kullanici extends State<kullanici> {
               ),
             ],
           ),
-          ListTile(
+          ExpansionTile(
             leading: Icon(Icons.date_range),
             title: Text('Ders Programı'),
-            trailing: Icon(Icons.arrow_right),
-            onTap: () {
-              Navigator.push(context,MaterialPageRoute(builder: (context)=>dersP()));
-            },
+            trailing: Icon(Icons.arrow_drop_down),
+            children: <Widget>[
+              ListTile(
+                leading: Icon(Icons.laptop_chromebook_outlined),
+                title: Text('Bilgisayar Programcılığı'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>bilgisayarP()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.reduce_capacity),
+                title: Text('Sosyal Hizmetler'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SosyalHdP()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.calculate_outlined),
+                title: Text('Muhasebe'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>muhasebedP()));
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.fire_truck),
+                title: Text('Lojistik'),
+                trailing: Icon(Icons.arrow_right),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>lojistikdP()));
+                },
+              ),
+            ],
           ),
-
-
           ListTile(
             leading: Icon(Icons.power_settings_new_outlined),
             title: Text('Çıkış yap'),
