@@ -87,14 +87,6 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
                 const SizedBox(
                   height: 20,
                 ),
-                Text(
-                  KullaniciText.registerQuestionDers,
-                  style: const TextStyle(fontSize: 15),
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                _dropdownButton(),
               ],
             ),
           ),
@@ -194,81 +186,6 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
     );
   }
 
-  DropdownButton _dropdownButton() {
-    return DropdownButton(
-        borderRadius: BorderRadius.circular(20),
-        isExpanded: true,
-        iconEnabledColor: KullaniciColors.purple,
-        value: _dropdownValue,
-        items: [
-          DropdownMenuItem(
-            child: Text(KullaniciText.Pazartesi),
-            value: KullaniciText.Pazartesi,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.Sali),
-            value: KullaniciText.Sali,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.Carsamba),
-            value: KullaniciText.Carsamba,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.Persembe),
-            value: KullaniciText.Persembe,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.Cuma),
-            value: KullaniciText.Cuma,
-          ),
-        ],
-        onChanged: (value) {
-          setState(() {
-            _dropdownValue = value;
-          });
-        });
-
-  }
-
-  DropdownButton _dropdownButton2() {
-    return DropdownButton(
-        borderRadius: BorderRadius.circular(20),
-        isExpanded: true,
-        iconEnabledColor: KullaniciColors.purple,
-        value: _dropdownValue,
-        items: [
-          DropdownMenuItem(
-            child: Text(KullaniciText.NesneYonelimli),
-            value: KullaniciText.NesneYonelimli,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.MobilProgramlama),
-            value: KullaniciText.MobilProgramlama,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.Girisimcilik),
-            value: KullaniciText.Girisimcilik,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.GorselProgramlama),
-            value: KullaniciText.GorselProgramlama,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.SunucuIsletim),
-            value: KullaniciText.SunucuIsletim,
-          ),
-          DropdownMenuItem(
-            child: Text(KullaniciText.GrafikTasarim),
-            value: KullaniciText.GrafikTasarim,
-          ),
-        ],
-        onChanged: (value) {
-          setState(() {
-            _dropdownValue1 = value;
-          });
-        });
-  }
-
   InkWell _registerButton(BuildContext context) {
     return InkWell(
         onTap: () => _registerOnTap(),
@@ -292,8 +209,8 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
   void _registerOnTap() {
     if (_usernameController.text.isNotEmpty &&
         _emailController.text.isNotEmpty &&
-        _passwordController.text.isNotEmpty &&
-        _dropdownValue.isNotEmpty) {
+        _passwordController.text.isNotEmpty
+        ) {
       setState(() {
         _isLoading = true;
       });
