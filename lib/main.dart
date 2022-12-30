@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'girisekrani.dart';
+import 'GirişEkranı.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 //veri tabanı veya diğer bağlantıları pubcpec.yaml dosyamızın içine ekliyıeuz
