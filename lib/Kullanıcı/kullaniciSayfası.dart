@@ -1,5 +1,7 @@
 import 'package:dersprogrami/Kaynak/Renkler.dart';
 import 'package:dersprogrami/Kaynak/String.dart';
+import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/DersVeM%C3%BCsaitG%C3%BCn.dart';
+import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Kgiri%C5%9F.dart';
 import 'package:dersprogrami/Yonetici/EkleUnvanSayfasi.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +74,7 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
         _authService.signOut();
         Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const Launch()),
+            MaterialPageRoute(builder: (context) => const Kgiris()),
                 (route) => false);
       },
       leading: Icon(
@@ -90,7 +92,7 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => const EkleUnvanSayfasi(),
+            builder: (context) => const DersVeMusaitGun(),
           ),
         );
       },
