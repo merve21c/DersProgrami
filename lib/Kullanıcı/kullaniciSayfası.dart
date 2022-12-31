@@ -2,13 +2,12 @@ import 'package:dersprogrami/Kaynak/Renkler.dart';
 import 'package:dersprogrami/Kaynak/String.dart';
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/DersVeM%C3%BCsaitG%C3%BCn.dart';
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Kgiri%C5%9F.dart';
-import 'package:dersprogrami/Yonetici/EkleUnvanSayfasi.dart';
 import 'package:flutter/material.dart';
 
 import '../Sabitler/Renk.dart';
 import '../Yonetici/EkleUnvanList.dart';
 import '../veritabanı/kimlikdoğrulama.dart';
-import 'launch.dart';
+
 
 class KullaniciSayfasi extends StatefulWidget {
   const KullaniciSayfasi({Key? key}) : super(key: key);
