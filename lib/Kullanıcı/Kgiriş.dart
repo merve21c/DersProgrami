@@ -1,3 +1,4 @@
+import 'package:dersprogrami/Kaynak/Renkler.dart';
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/KayitSayfasi.dart';
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/kullaniciSayfas%C4%B1.dart';
 import 'package:flutter/material.dart';
@@ -43,15 +44,15 @@ class _KgirisState extends State<Kgiris> {
                 controller: _emailController,
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pink),
+                      borderSide: BorderSide(color: KullaniciColors.pink),
                     ),
                     labelText: 'E_posta',
                     hintText: 'E_postanızı giriniz',
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Colors.black,
+                      color: KullaniciColors.grey,
                     ),
-                    labelStyle: TextStyle(color: Colors.pink),
+                    labelStyle: TextStyle(color: KullaniciColors.pink),
                     border: OutlineInputBorder()),
               ),
               SizedBox(height: 10.0),
@@ -60,21 +61,20 @@ class _KgirisState extends State<Kgiris> {
                 controller: _passwordController,
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pink),
+                      borderSide: BorderSide(color: KullaniciColors.pink),
                     ),
                     labelText: 'Şifre',
                     hintText: 'Şifrenizi giriniz',
                     prefixIcon: Icon(
                       Icons.key_sharp,
-                      color: Colors.black,
+                      color: KullaniciColors.grey,
                     ),
-                    labelStyle: TextStyle(color: Colors.pink),
+                    labelStyle: TextStyle(color:KullaniciColors.pink),
                     border: OutlineInputBorder()),
               ),
 
               ElevatedButton(
                 child: Text('Giriş'),
-
                 onPressed: () async {
                   User? user = await loginUsingEmailPassword(email: _emailController.text, password: _passwordController.text, context: context);
                   print(user);
@@ -82,6 +82,9 @@ class _KgirisState extends State<Kgiris> {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> KullaniciSayfasi()));
                   }
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: KullaniciColors.pink,
+                ),
               ),
               ElevatedButton(
                 child: Text('Geri Dön'),
@@ -91,12 +94,18 @@ class _KgirisState extends State<Kgiris> {
                       MaterialPageRoute(
                           builder: (context) => girisekrani()));
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: KullaniciColors.pink,
+                ),
               ),
               ElevatedButton(
                 child: Text('Kayıt Ol'),
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => KayitSayfasi())); //kayıt
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: KullaniciColors.pink,
+                ),
               ),
 
             ],
