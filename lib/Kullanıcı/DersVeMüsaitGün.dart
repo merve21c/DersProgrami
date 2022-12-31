@@ -1,5 +1,8 @@
 import 'package:dersprogrami/Kaynak/Renkler.dart';
+import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/kullaniciSayfas%C4%B1.dart';
+import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DersVeMusaitGun extends StatefulWidget {
@@ -10,6 +13,7 @@ class DersVeMusaitGun extends StatefulWidget {
 }
 
 class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
+  AuthService _authService=AuthService();
   bool? Pazartesi = false,
       Sali = false,
       Carsamba = false,
@@ -21,50 +25,41 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
       Gorsel = false,
       Veri = false;
 
-
   @override
   void initState() {
-
     _kontrolValue();
-
   }
 
-  _kontrolValue() async{
-    SharedPreferences prefs =await SharedPreferences.getInstance();
+  _kontrolValue() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      Pazartesi = (prefs.getBool("Pazartesi")) ?? false ;
-      Sali = (prefs.getBool("Salı")) ?? false ;
-      Carsamba= (prefs.getBool("Çarşamba")) ?? false ;
-      Persembe = (prefs.getBool("Perşembe")) ?? false ;
-      Cuma = (prefs.getBool("Cuma")) ?? false ;
+      Pazartesi = (prefs.getBool("Pazartesi")) ?? false;
+      Sali = (prefs.getBool("Salı")) ?? false;
+      Carsamba = (prefs.getBool("Çarşamba")) ?? false;
+      Persembe = (prefs.getBool("Perşembe")) ?? false;
+      Cuma = (prefs.getBool("Cuma")) ?? false;
 
-      Nesne=(prefs.getBool("Nesne Yönelimli Programlama")) ?? false ;
-      Programlama=(prefs.getBool("Programlama Temelleri")) ?? false ;
-      Mobil=(prefs.getBool("Mobil Programlama")) ?? false ;
-      Gorsel=(prefs.getBool("Görsel Programlama")) ?? false ;
-      Veri=(prefs.getBool("Veri Yapıları ")) ?? false ;
-
+      Nesne = (prefs.getBool("Nesne Yönelimli Programlama")) ?? false;
+      Programlama = (prefs.getBool("Programlama Temelleri")) ?? false;
+      Mobil = (prefs.getBool("Mobil Programlama")) ?? false;
+      Gorsel = (prefs.getBool("Görsel Programlama")) ?? false;
+      Veri = (prefs.getBool("Veri Yapıları ")) ?? false;
     });
-
   }
 
   _secValue() async {
-    SharedPreferences prefs =await SharedPreferences.getInstance();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-
-      prefs.setBool("Pazartesi",Pazartesi!) ;
-      prefs.setBool("Salı",Sali!);
-      prefs.setBool("Çarşamba",Carsamba!);
-      prefs.setBool("Perşembe",Persembe!);
-      prefs.setBool("Cuma",Cuma!);
+      prefs.setBool("Pazartesi", Pazartesi!);
+      prefs.setBool("Salı", Sali!);
+      prefs.setBool("Çarşamba", Carsamba!);
+      prefs.setBool("Perşembe", Persembe!);
+      prefs.setBool("Cuma", Cuma!);
       prefs.setBool("Nesne Yönelimli Programlama", Nesne!);
-      prefs.setBool("Programlama Temelleri",Programlama!);
+      prefs.setBool("Programlama Temelleri", Programlama!);
       prefs.setBool("Mobil Programlama", Mobil!);
       prefs.setBool("Görsel Programlama", Gorsel!);
       prefs.setBool("Veri Yapıları", Veri!);
-
-
-
     });
   }
 
@@ -75,7 +70,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
           title: Text("Ders Ve Müsait Günler"),
           backgroundColor: KullaniciColors.purple),
       body: SingleChildScrollView(
-     child: Container(
+        child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20),
           alignment: Alignment.topLeft,
           child:
@@ -198,13 +193,17 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                 ),
               ],
             ),
-          ]
+            Padding(
+              padding: const EdgeInsets.only(left: 150, right: 80, bottom: 95),
+              child: InkWell(
+                onTap: () {
+                },
+                child: Text('Seç'),
               ),
-
-      ),
-
+            )
+          ]),
+        ),
       ),
     );
-
   }
 }
