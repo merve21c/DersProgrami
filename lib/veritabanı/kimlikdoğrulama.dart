@@ -31,7 +31,6 @@ class AuthService {
         .set({
       'userName': name,
       'email': email,
-
         });
 
     return user.user;
