@@ -38,6 +38,12 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
       Persembe = (prefs.getBool("Perşembe")) ?? false ;
       Cuma = (prefs.getBool("Cuma")) ?? false ;
 
+      Nesne=(prefs.getBool("Nesne Yönelimli Programlama")) ?? false ;
+      Programlama=(prefs.getBool("Programlama Temelleri")) ?? false ;
+      Mobil=(prefs.getBool("Mobil Programlama")) ?? false ;
+      Gorsel=(prefs.getBool("Görsel Programlama")) ?? false ;
+      Veri=(prefs.getBool("Veri Yapıları ")) ?? false ;
+
     });
 
   }
@@ -46,11 +52,17 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
     SharedPreferences prefs =await SharedPreferences.getInstance();
     setState(() {
 
-      prefs.setBool("Pazartesi",Pazartesi!);
+      prefs.setBool("Pazartesi",Pazartesi!) ;
       prefs.setBool("Salı",Sali!);
       prefs.setBool("Çarşamba",Carsamba!);
       prefs.setBool("Perşembe",Persembe!);
       prefs.setBool("Cuma",Cuma!);
+      prefs.setBool("Nesne Yönelimli Programlama", Nesne!);
+      prefs.setBool("Programlama Temelleri",Programlama!);
+      prefs.setBool("Mobil Programlama", Mobil!);
+      prefs.setBool("Görsel Programlama", Gorsel!);
+      prefs.setBool("Veri Yapıları", Veri!);
+
 
 
     });
@@ -62,7 +74,8 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
       appBar: AppBar(
           title: Text("Ders Ve Müsait Günler"),
           backgroundColor: KullaniciColors.purple),
-      body: Container(
+      body: SingleChildScrollView(
+     child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20),
           alignment: Alignment.topLeft,
           child:
@@ -185,7 +198,13 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                 ),
               ],
             ),
-          ])),
+          ]
+              ),
+
+      ),
+
+      ),
     );
+
   }
 }
