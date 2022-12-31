@@ -17,26 +17,20 @@ class KayitSayfasi extends StatefulWidget {
 
 class _KayitSayfasiState extends State<KayitSayfasi> {
   final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _gunlerController = TextEditingController();
-  final TextEditingController _derslerController =TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  AuthService _authService =AuthService();
+  AuthService _authService = AuthService();
   bool _isVisible = true;
-  String _dropdownValue = KullaniciText.Pazartesi;
-  String _dropdownValue1 = KullaniciText.NesneYonelimli;
-
   bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: KullaniciColors.mainColor,
-      appBar: RenkAppBar(KullaniciText.registerText),
-      body:_body(context)
-    );
-   }
+        backgroundColor: KullaniciColors.mainColor,
+        appBar: RenkAppBar(KullaniciText.registerText),
+        body: _body(context));
+  }
 
   Stack _body(BuildContext context) {
     return Stack(
@@ -55,7 +49,7 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
             ],
           ),
         ),
-        if(_isLoading) const BeklemeSayfasi(),
+        if (_isLoading) const BeklemeSayfasi(),
       ],
     );
   }
@@ -161,13 +155,13 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
           },
           child: _isVisible
               ? Icon(
-            Icons.remove_red_eye,
-            color: KullaniciColors.grey,
-          )
+                  Icons.remove_red_eye,
+                  color: KullaniciColors.grey,
+                )
               : Icon(
-            Icons.remove_red_eye_outlined,
-            color: KullaniciColors.grey,
-          ),
+                  Icons.remove_red_eye_outlined,
+                  color: KullaniciColors.grey,
+                ),
         ),
         prefixIcon: Icon(
           Icons.vpn_key,
@@ -188,7 +182,7 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
 
   InkWell _registerButton(BuildContext context) {
     return InkWell(
-        onTap: () => _registerOnTap(),
+        onTap: () => _registerOnTap(), //kayıt ol butonu
         child: Container(
           decoration: BoxDecoration(
             color: KullaniciColors.pink,
@@ -209,24 +203,29 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
   void _registerOnTap() {
     if (_usernameController.text.isNotEmpty &&
         _emailController.text.isNotEmpty &&
-        _passwordController.text.isNotEmpty
-        ) {
+        _passwordController.text.isNotEmpty) {
       setState(() {
         _isLoading = true;
       });
       _authService
           .createKullanici(
         _usernameController.text,
-        _gunlerController.text,
-        _derslerController.text,
         _emailController.text,
         _passwordController.text,
       )
           .then((value) {
+        Fluttertoast.showToast(
+            msg: "Kayıt Başarılı!",
+            timeInSecForIosWeb: 5,
+            toastLength: Toast.LENGTH_SHORT,
+            gravity: ToastGravity.BOTTOM,
+            backgroundColor: Colors.grey[600],
+            textColor: Colors.white,
+            fontSize: 14);
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => const girisekrani()),
-                (route) => false);
+            (route) => false);
       }).catchError((error) {
         _warningToast(KullaniciText.errorText);
       }).whenComplete(() {
@@ -249,4 +248,5 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
         textColor: KullaniciColors.black,
         fontSize: 14);
   }
-  }
+
+}
