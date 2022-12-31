@@ -104,7 +104,7 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: KullaniciColors.pink),
+          borderSide: BorderSide(color: KullaniciColors.purple),
           borderRadius: BorderRadius.circular(10),
         ),
       ),
@@ -173,7 +173,7 @@ class _KayitSayfasiState extends State<KayitSayfasi> {
           borderRadius: BorderRadius.circular(10),
         ),
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: KullaniciColors.pink),
+          borderSide: BorderSide(color: KullaniciColors.purple),
           borderRadius: BorderRadius.circular(10),
         ),
       ),
