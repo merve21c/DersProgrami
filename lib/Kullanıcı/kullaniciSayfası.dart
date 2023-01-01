@@ -5,7 +5,6 @@ import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Kgiri%C5%9F.dart';
 import 'package:flutter/material.dart';
 
 import '../Sabitler/Renk.dart';
-import '../Yonetici/EkleUnvanList.dart';
 import '../veritabanı/kimlikdoğrulama.dart';
 
 
@@ -24,8 +23,8 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
     return Scaffold(
       backgroundColor:KullaniciColors.mainColor,
       appBar: RenkAppBar(KullaniciText.homeText),
+      //body:_ekleunvanlist(),
       drawer: _drawer(),
-      body: const EkleUnvanList(),
       floatingActionButton: _floatingActionButton(),
     );
   }
