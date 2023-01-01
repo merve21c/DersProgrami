@@ -1,8 +1,6 @@
 import 'package:dersprogrami/Kaynak/Renkler.dart';
-import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/kullaniciSayfas%C4%B1.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class DersVeMusaitGun extends StatefulWidget {
