@@ -1,8 +1,10 @@
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Kgiri%C5%9F.dart';
+import 'package:dersprogrami/Yonetici/YoneticiSayfasi.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 import '../GirişEkranı.dart';
+import '../Kaynak/Renkler.dart';
 
 class Ygiris extends StatefulWidget {
   const Ygiris({Key? key}) : super(key: key);
@@ -42,15 +44,15 @@ class _YgirisState extends State<Ygiris> {
                 controller: _emailController,
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pink),
+                      borderSide: BorderSide(color: KullaniciColors.purple),
                     ),
                     labelText: 'E_posta',
                     hintText: 'E_postanızı giriniz',
                     prefixIcon: Icon(
                       Icons.person,
-                      color: Colors.black,
+                      color: KullaniciColors.grey,
                     ),
-                    labelStyle: TextStyle(color: Colors.pink),
+                    labelStyle: TextStyle(color: KullaniciColors.pink),
                     border: OutlineInputBorder()),
               ),
               SizedBox(height: 10.0),
@@ -59,28 +61,31 @@ class _YgirisState extends State<Ygiris> {
                 controller: _passwordController,
                 decoration: InputDecoration(
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.pink),
+                      borderSide: BorderSide(color:KullaniciColors.purple),
                     ),
                     labelText: 'Şifre',
                     hintText: 'Şifrenizi giriniz',
                     prefixIcon: Icon(
                       Icons.key_sharp,
-                      color: Colors.black,
+                      color: KullaniciColors.grey,
                     ),
-                    labelStyle: TextStyle(color: Colors.pink),
+                    labelStyle: TextStyle(color: KullaniciColors.pink),
                     border: OutlineInputBorder()),
               ),
 
               ElevatedButton(
-                child: Text('Giriş'),
+                child: Text('    Giriş    '),
 
                 onPressed: () async {
                   User? user = await loginUsingEmailPassword(email: _emailController.text, password: _passwordController.text, context: context);
                   print(user);
                   if(user != null){
-                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> Kgiris()));
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> YoneticiSayfasi()));
                   }
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: KullaniciColors.pink,
+                ),
               ),
               ElevatedButton(
                 child: Text('Geri Dön'),
@@ -90,6 +95,9 @@ class _YgirisState extends State<Ygiris> {
                       MaterialPageRoute(
                           builder: (context) => girisekrani()));
                 },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: KullaniciColors.pink,
+                ),
               ),
             ],
           ),
