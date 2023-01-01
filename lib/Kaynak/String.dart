@@ -34,7 +34,7 @@ class KullaniciText{
   static String loginWrongEmailText = "Böyle mail mi olur?";
   static String crashlytics = "Firebase Crashlytics";
 
-  //Kullanıcı sayfası
+  //Kullanıcı sayfası//yönetici
   static String homeText = "Anasayfa";
   static String profileText = "Profilim";
   static String logoutText = "Çıkış yap";
