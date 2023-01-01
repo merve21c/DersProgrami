@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'Kaynak/Renkler.dart';
 import 'Kullanıcı/Kgiriş.dart';
+import 'Yonetici/Ygiriş.dart';
 
 class girisekrani extends StatefulWidget {
   const girisekrani({Key? key}) : super(key: key);
@@ -25,6 +26,17 @@ class _girisekraniState extends State<girisekrani> {
               onPressed: () {
                 Navigator.push(
                     context, MaterialPageRoute(builder: (context) => Kgiris()));
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: KullaniciColors.pink,
+                side: BorderSide(width: 3, color: KullaniciColors.purple),
+              ),
+            ),
+            ElevatedButton(
+              child: Text('             Yönetici          '),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => Ygiris()));
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: KullaniciColors.pink,
