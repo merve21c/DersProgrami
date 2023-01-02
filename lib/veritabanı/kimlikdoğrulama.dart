@@ -35,6 +35,37 @@ class AuthService {
 
     return user.user;
   }
+
+  void addDersVeGun(
+      String Pazartesi,
+      String Sali,
+      String Carsamba,
+      String Persembe,
+      String Cuma,
+
+      String Nesne ,
+       String Programlama,
+      String Mobil,
+      String Gorsel,
+      String Veri,
+      )async {var ref = _firestore.collection(
+      "Kullanıcı"); //koleksiyonumuzun ismini yazıyoruz .
+  await ref.add({
+    'Pazartesi':Pazartesi,
+    'Sali':Sali,
+    'Carsamba':Carsamba,
+    'Persembe':Persembe,
+    'Cuma':Cuma,
+
+    'Nesne':Nesne,
+    'Programlama':Nesne,
+    'Mobil':Mobil,
+    'Gorsel':Gorsel,
+    'Veri':Veri,
+
+  });
+
+  }
 }
 
 
