@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../Kullanıcı/DersVeMüsaitGün.dart';
+
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -34,36 +36,6 @@ class AuthService {
         });
 
     return user.user;
-  }
-
-  void addDersVeGun(
-      String Pazartesi,
-      String Sali,
-      String Carsamba,
-      String Persembe,
-      String Cuma,
-
-      String Nesne ,
-       String Programlama,
-      String Mobil,
-      String Gorsel,
-      String Veri,
-      )async {var ref = _firestore.collection(
-      "Kullanıcı"); //koleksiyonumuzun ismini yazıyoruz .
-  await ref.add({
-    'Pazartesi':Pazartesi,
-    'Sali':Sali,
-    'Carsamba':Carsamba,
-    'Persembe':Persembe,
-    'Cuma':Cuma,
-
-    'Nesne':Nesne,
-    'Programlama':Nesne,
-    'Mobil':Mobil,
-    'Gorsel':Gorsel,
-    'Veri':Veri,
-
-  });
 
   }
 }
