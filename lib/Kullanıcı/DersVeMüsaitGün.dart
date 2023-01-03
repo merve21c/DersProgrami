@@ -1,5 +1,5 @@
 import 'package:dersprogrami/Kaynak/Renkler.dart';
-import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
+import 'package:dersprogrami/veritaban%C4%B1/DersVeG%C3%BCnlerService.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -12,7 +12,8 @@ class DersVeMusaitGun extends StatefulWidget {
 }
 
 class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
-  AuthService _authService = AuthService();
+  DersVeGunService _dersVeGunService =DersVeGunService();
+
   bool? Pazartesi = false,
       Sali = false,
       Carsamba = false,
@@ -196,7 +197,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
               padding: const EdgeInsets.only(left: 150, right: 80, bottom: 95),
               child: InkWell(
                 onTap: () {
-                  _authService
+                  _dersVeGunService
                       .addDersVeGun(
                           Pazartesi.toString(),
                           Sali.toString(),
