@@ -1,5 +1,6 @@
 import 'package:dersprogrami/Kaynak/Renkler.dart';
 import 'package:dersprogrami/Kaynak/String.dart';
+import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Bilgiler.dart';
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/DersVeM%C3%BCsaitG%C3%BCn.dart';
 import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Kgiri%C5%9F.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,7 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
           _drawerHome(),
           const Divider(),
           _drawerLogout(),
+          _drawersayfa(),
         ],
       ),
     );
@@ -64,7 +66,6 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
     );
   }
 
-
   ListTile _drawerLogout() {
     return ListTile(
       title: Text(KullaniciText.logoutText),
@@ -81,7 +82,21 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
       ),
     );
   }
-
+  ListTile _drawersayfa() {
+    return ListTile(
+      title: Text(KullaniciText.sayfaText),
+      onTap: () {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const Bilgiler()),
+                (route) => false);
+      },
+      leading: Icon(
+        Icons.list,
+        color: KullaniciColors.pink,
+      ),
+    );
+  }
   FloatingActionButton _floatingActionButton() {
     return FloatingActionButton(
       backgroundColor: KullaniciColors.grey,
