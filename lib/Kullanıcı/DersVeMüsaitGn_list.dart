@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dersprogrami/Kaynak/Renkler.dart';
 import 'package:dersprogrami/veritaban%C4%B1/DersVeG%C3%BCnlerService.dart';
-import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
 
 class DersVeMusaitGunList extends StatefulWidget {
@@ -85,7 +85,7 @@ DersVeGunService _dersVeGunService = DersVeGunService();
                   child: Container(
                     height: size.height * .3,
                     decoration: BoxDecoration(
-                        color: Colors.white,
+                        color: KullaniciColors.white,
                         border: Border.all(color: Colors.blue, width: 2),
                         borderRadius:
                         BorderRadius.all(Radius.circular(10))),
@@ -94,11 +94,19 @@ DersVeGunService _dersVeGunService = DersVeGunService();
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-
                           Text("${mypost['Pazartesi']}",
                             style: TextStyle(fontSize: 16),
                             textAlign: TextAlign.center,
                           ),
+                          Text( "${mypost['Salı']}",
+                            style: TextStyle(fontSize: 16),
+                            textAlign: TextAlign.center,
+                          ),
+
+                       Text( "${mypost['Carsamba']}",
+                        style: TextStyle(fontSize: 16),
+                    textAlign: TextAlign.center,
+                  ),
                         ],
                       ),
                     ),
