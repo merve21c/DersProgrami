@@ -86,7 +86,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                     setState(
                       () {
                         Pazartesi = value;
-                        _secValue();
+                        _kontrolValue();
                       },
                     );
                   },
@@ -97,7 +97,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Sali = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Salı"),
@@ -107,7 +107,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Carsamba = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Çarşamba"),
@@ -117,7 +117,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Persembe = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Perşembe"),
@@ -127,7 +127,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Cuma = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Cuma"),
@@ -145,7 +145,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                     setState(
                       () {
                         Nesne = value;
-                        _secValue();
+                        _kontrolValue();
                       },
                     );
                   },
@@ -166,7 +166,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Mobil = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Mobil Programlama"),
@@ -176,7 +176,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Gorsel = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Görsel Programlama"),
@@ -186,7 +186,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Veri = value;
-                      _secValue();
+                      _kontrolValue();
                     });
                   },
                   title: Text("Veri Yapıları"),
