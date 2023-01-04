@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class KullaniciColors{
+  static Color blue= Colors.lightBlueAccent.shade100;
   static Color mainColor = Colors.grey.shade300;
   static Color pink = Colors.pinkAccent.shade100;
   static Color white = Colors.white;
