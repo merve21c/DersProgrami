@@ -38,8 +38,12 @@ class KullaniciText{
   static String homeText = "Anasayfa";
   static String profileText = "Profilim";
   static String logoutText = "Çıkış yap";
-  static String sayfaText='Bilgiler';
+  static String bildirimText = "Bildirim";
+  static String sayfaText=' M.Mustafa Bahsi';
+  static String removeText = "Silelim";
+  static String alertDialogTitle ="";
   static String dersList = "Ders Listesi:";
+  static String giveUpText = "Vazgeçtim";
 
   //Ekle Unvan
   static String addUnvanText = "Unvan Ekle";
