@@ -14,7 +14,7 @@ class DersVeMusaitGun extends StatefulWidget {
 class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
   DersVeGunService _dersVeGunService =DersVeGunService();
 
-  bool? Pazartesi = false,
+  bool? Pazartesi =false,
       Sali = false,
       Carsamba = false,
       Persembe = false,
@@ -33,7 +33,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
   _kontrolValue() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      Pazartesi = (prefs.getBool("Pazartesi")) ?? false;
+      Pazartesi = (prefs.getBool("Pazartesi")) ?? true;
       Sali = (prefs.getBool("Salı")) ?? false;
       Carsamba = (prefs.getBool("Çarşamba")) ?? false;
       Persembe = (prefs.getBool("Perşembe")) ?? false;
@@ -86,7 +86,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                     setState(
                       () {
                         Pazartesi = value;
-                        _kontrolValue();
+                        _secValue();
                       },
                     );
                   },
@@ -97,7 +97,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Sali = value;
-                      _kontrolValue();
+                      _secValue();
                     });
                   },
                   title: Text("Salı"),
@@ -107,7 +107,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Carsamba = value;
-                      _kontrolValue();
+                      _secValue();
                     });
                   },
                   title: Text("Çarşamba"),
@@ -117,7 +117,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Persembe = value;
-                      _kontrolValue();
+                      _secValue();
                     });
                   },
                   title: Text("Perşembe"),
@@ -127,7 +127,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Cuma = value;
-                      _kontrolValue();
+                      _secValue();
                     });
                   },
                   title: Text("Cuma"),
@@ -145,7 +145,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                     setState(
                       () {
                         Nesne = value;
-                        _kontrolValue();
+                        _secValue();
                       },
                     );
                   },
@@ -166,7 +166,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Mobil = value;
-                      _kontrolValue();
+                      _secValue();
                     });
                   },
                   title: Text("Mobil Programlama"),
@@ -176,7 +176,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Gorsel = value;
-                      _kontrolValue();
+                      _secValue();
                     });
                   },
                   title: Text("Görsel Programlama"),
@@ -186,9 +186,9 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                   onChanged: (bool? value) {
                     setState(() {
                       Veri = value;
-                      _kontrolValue();
+                      _secValue();
                     });
-                  },
+                   },
                   title: Text("Veri Yapıları"),
                 ),
               ],
@@ -197,27 +197,6 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
               padding: const EdgeInsets.only(left: 150, right: 80, bottom: 95),
               child: InkWell(
                 onTap: () {
-                  _dersVeGunService
-                      .addDersVeGun(
-                          Pazartesi.toString(),
-                          Sali.toString(),
-                          Carsamba.toString(),
-                          Persembe.toString(),
-                          Cuma.toString(),
-                          Nesne.toString(),
-                          Programlama.toString(),
-                          Mobil.toString(),
-                          Gorsel.toString(),
-                          Veri.toString());
-                  Fluttertoast.showToast(
-                      msg: " Bilgiler eklendi!",
-                      timeInSecForIosWeb: 5,
-                      toastLength: Toast.LENGTH_SHORT,
-                      gravity: ToastGravity.BOTTOM,
-                      backgroundColor: Colors.grey[600],
-                      textColor: Colors.white,
-                      fontSize: 14);
-                  Navigator.pop(context);
 
                 },
                 child: Text('Seç'),
