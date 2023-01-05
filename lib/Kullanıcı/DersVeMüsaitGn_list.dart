@@ -1,5 +1,8 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dersprogrami/Kaynak/Renkler.dart';
+import 'package:dersprogrami/Kaynak/String.dart';
+import 'package:dersprogrami/Sabitler/Bekleme_Sayfas%C4%B1.dart';
 import 'package:dersprogrami/veritaban%C4%B1/DersVeG%C3%BCnlerService.dart';
 import 'package:flutter/material.dart';
 
@@ -14,108 +17,131 @@ class _DersVeMusaitGunListState extends State<DersVeMusaitGunList> {
 DersVeGunService _dersVeGunService = DersVeGunService();
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
-    return StreamBuilder<QuerySnapshot>(
-      stream: _dersVeGunService.getDersVeGun(),
-      builder: (context, snapshot) {
-        return !snapshot.hasData
-            ? CircularProgressIndicator()
-            : ListView.builder(
-            itemCount: snapshot.data!.docs.length,
-            itemBuilder: (checkbox, index) {
-              DocumentSnapshot mypost = snapshot.data!.docs[index];
-
-              Future<void> _showChoiseDialog(BuildContext context) {
-                return showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                          title: Text(
-                            "Silmek istediğinize emin misiniz?",
-                            textAlign: TextAlign.center,
-                          ),
-                          shape: RoundedRectangleBorder(
-                              borderRadius:
-                              BorderRadius.all(Radius.circular(8.0))),
-                          content: Container(
-                              height: 30,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                              ),
-                              child: Row(
-                                mainAxisAlignment:
-                                MainAxisAlignment.spaceBetween,
-                                children: <Widget>[
-                                  GestureDetector(
-                                    onTap: () {
-                                     _dersVeGunService
-                                          .removeDersVeGun(mypost.id);
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text(
-                                      "Evet",
-                                      style: TextStyle(
-                                          color: Colors.blue,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                  GestureDetector(
-                                    onTap: () {
-                                      Navigator.pop(context);
-                                    },
-                                    child: Text(
-                                      "Vazgeç",
-                                      style: TextStyle(
-                                          color: Colors.blue,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                  ),
-                                ],
-                              )));
-                    });
-              }
-
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InkWell(
-                  onTap: () {
-                    _showChoiseDialog(context);
-                  },
-                  child: Container(
-                    height: size.height * .3,
-                    decoration: BoxDecoration(
-                        color: KullaniciColors.white,
-                        border: Border.all(color: Colors.blue, width: 2),
-                        borderRadius:
-                        BorderRadius.all(Radius.circular(10))),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("${mypost['Pazartesi']}",
-                            style: TextStyle(fontSize: 16),
-                            textAlign: TextAlign.center,
-                          ),
-                          Text( "${mypost['Salı']}",
-                            style: TextStyle(fontSize: 16),
-                            textAlign: TextAlign.center,
-                          ),
-
-                       Text( "${mypost['Carsamba']}",
-                        style: TextStyle(fontSize: 16),
-                    textAlign: TextAlign.center,
-                  ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-              );
-            });
-      },
-    );
+    return _body();
   }
+
+StreamBuilder _body() {
+  return StreamBuilder<QuerySnapshot>(
+    stream: _dersVeGunService.getDersVeGun(),
+    builder: (context, snaphot) {
+      return !snaphot.hasData
+          ? const BeklemeSayfasi()
+          : snaphot.data != null
+          ? _mainBody(snaphot)
+          : const BeklemeSayfasi();
+    },
+  );
 }
+
+ListView _mainBody(AsyncSnapshot<QuerySnapshot<Object?>> snaphot) {
+  return ListView.builder(
+      itemCount: snaphot.data?.docs.length ?? 0,
+      itemBuilder: (context, index) {
+        DocumentSnapshot mypost = snaphot.data!.docs[index];
+
+        Future<void> _showChoiseDialog(BuildContext context) {
+          return showDialog(
+              context: context,
+              builder: (BuildContext context) {
+                return _alertDialog(mypost);
+              });
+        }
+
+        return Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: InkWell(
+            onTap: () {
+              _showChoiseDialog(context);
+            },
+            child: _dersvegunlistContainer(mypost),
+          ),
+        );
+      });
+}
+
+Container _dersvegunlistContainer(DocumentSnapshot mypost) {
+  return Container(
+    decoration: BoxDecoration(
+      color:KullaniciColors.white,
+      borderRadius: const BorderRadius.all(Radius.circular(20)),
+    ),
+    child: _dietListColumn(mypost),
+  );
+}
+
+Padding _dietListColumn(DocumentSnapshot mypost) {
+  return Padding(
+    padding: const EdgeInsets.all(20.0),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          KullaniciText.sayfaText,
+          style: const TextStyle(fontSize: 16),
+        ),
+        const Divider(),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          "${mypost['Pazartesi']}",
+        ),
+        const SizedBox(
+          height: 10,
+        ), Text(
+          "${mypost['Sali']}",
+        ),
+        const SizedBox(
+          height: 10,
+        ), Text(
+          "${mypost['Carsamba']}",
+        ),
+        const SizedBox(
+          height: 10,
+        ), Text(
+          "${mypost['Persembe']}",
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+        Text(
+          "${mypost['Cuma']}",
+        ),
+        const SizedBox(
+          height: 10,
+        ), Text(
+          "${mypost['Nesne']}",
+        ),
+        const SizedBox(
+          height: 10,
+        ),
+      ],
+    ),
+  );
+}
+}
+
+AlertDialog _alertDialog(DocumentSnapshot mypost) {
+  return AlertDialog(
+    title: Text(
+      KullaniciText.alertDialogTitle,
+      textAlign: TextAlign.center,
+    ),
+    shape: const RoundedRectangleBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(20.0),
+      ),
+    ),
+    content: _alertDialogContent(mypost),
+  );
+}
+
+Row _alertDialogContent(DocumentSnapshot mypost) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: <Widget>[
+    ],
+  );
+}
+
 
