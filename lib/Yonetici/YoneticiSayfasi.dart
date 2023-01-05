@@ -1,3 +1,4 @@
+import 'package:dersprogrami/Yonetici/bildirim.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
 
@@ -35,6 +36,7 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
           _drawerHome(),
           const Divider(),
           _drawerLogout(),
+          _drawerBildirim(),
         ],
       ),
     );
@@ -74,6 +76,20 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
       leading: Icon(
         Icons.remove_circle,
         color: KullaniciColors.pink,
+      ),
+    );
+  }
+  ListTile _drawerBildirim(){
+    return ListTile(
+      title: Text(KullaniciText.bildirimText),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const bildirim()));
+      },
+      leading: Icon(
+        Icons.add_alert,
+        color: Colors.yellow,
       ),
     );
   }
