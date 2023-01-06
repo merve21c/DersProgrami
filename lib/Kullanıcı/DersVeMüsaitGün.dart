@@ -188,7 +188,7 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                       Veri = value;
                       _secValue();
                     });
-                   },
+                  },
                   title: Text("Veri Yapıları"),
                 ),
               ],
@@ -197,6 +197,27 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
               padding: const EdgeInsets.only(left: 150, right: 80, bottom: 95),
               child: InkWell(
                 onTap: () {
+                  _dersVeGunService
+                      .addDersVeGun(
+                          Pazartesi.toString(),
+                          Sali.toString(),
+                          Carsamba.toString(),
+                          Persembe.toString(),
+                          Cuma.toString(),
+                          Nesne.toString(),
+                          Programlama.toString(),
+                          Mobil.toString(),
+                          Gorsel.toString(),
+                          Veri.toString());
+                  Fluttertoast.showToast(
+                      msg: " Bilgiler eklendi!",
+                      timeInSecForIosWeb: 5,
+                      toastLength: Toast.LENGTH_SHORT,
+                      gravity: ToastGravity.BOTTOM,
+                      backgroundColor: Colors.grey[600],
+                      textColor: Colors.white,
+                      fontSize: 14);
+                  Navigator.pop(context);
 
                 },
                 child: Text('Seç'),
