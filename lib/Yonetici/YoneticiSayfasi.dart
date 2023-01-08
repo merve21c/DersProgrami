@@ -1,5 +1,6 @@
 import 'package:dersprogrami/Yonetici/%C3%96bilgiler.dart';
 import 'package:dersprogrami/Yonetici/DersVeGun.dart';
+import 'package:dersprogrami/Yonetici/Program.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
 import '../Kaynak/Renkler.dart';
@@ -37,7 +38,8 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
           _drawerHome(),
           const Divider(),
           _drawerLogout(),
-          _drawerlist()
+          _drawerlist(),
+          _drawerD(),
         ],
       ),
     );
@@ -73,6 +75,22 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
       },
       leading: Icon(
         Icons.list,
+        color: KullaniciColors.pink,
+      ),
+    );
+  }
+  ListTile _drawerD() {
+    return ListTile(
+      title: Text(KullaniciText.logoutText),
+      onTap: () {
+        _authService.signOut();
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (context) => const DropDownHelper()),
+                (route) => false);
+      },
+      leading: Icon(
+        Icons.add,
         color: KullaniciColors.pink,
       ),
     );
