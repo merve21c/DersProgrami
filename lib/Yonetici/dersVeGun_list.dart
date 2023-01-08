@@ -2,11 +2,11 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dersprogrami/Kaynak/Renkler.dart';
 import 'package:dersprogrami/Kaynak/String.dart';
 import 'package:dersprogrami/Sabitler/Bekleme_Sayfas%C4%B1.dart';
-import 'package:dersprogrami/Yonetici/UnvanEkle.dart';
 import 'package:dersprogrami/veritaban%C4%B1/DersVeG%C3%BCnlerService.dart';
 import 'package:flutter/material.dart';
 
-import 'Program.dart';
+
+import 'ProgramE.dart';
 
 class YDersVeMusaitGunlist extends StatefulWidget {
   const YDersVeMusaitGunlist({Key? key}) : super(key: key);
