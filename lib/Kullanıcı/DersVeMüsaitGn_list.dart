@@ -41,20 +41,10 @@ class _DersVeMusaitGunListState extends State<DersVeMusaitGunList> {
           DocumentSnapshot mypost = snaphot.data!.docs[index];
 
 
-          Future<void> _showChoiseDialog(BuildContext context) {
-            return showDialog(
-                context: context,
-                builder: (BuildContext context) {
-                  return _alertDialog(mypost);
-                });
-          }
 
           return Padding(
             padding: const EdgeInsets.all(20.0),
             child: InkWell(
-              onTap: () {
-                _showChoiseDialog(context);
-              },
               child: _dersvegunlistContainer(mypost),
             ),
           );
@@ -67,11 +57,11 @@ class _DersVeMusaitGunListState extends State<DersVeMusaitGunList> {
         color: KullaniciColors.white,
         borderRadius: const BorderRadius.all(Radius.circular(20)),
       ),
-      child: _dietListColumn(mypost),
+      child: _dersvegunListColumn(mypost),
     );
   }
 
-  Padding _dietListColumn(DocumentSnapshot mypost) {
+  Padding _dersvegunListColumn(DocumentSnapshot mypost) {
 
     return Padding(
       padding: const EdgeInsets.all(20.0),
@@ -79,47 +69,91 @@ class _DersVeMusaitGunListState extends State<DersVeMusaitGunList> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            KullaniciText.sayfaText,
+            KullaniciText.MustafaText,
             style: const TextStyle(fontSize: 16),
           ),
           const Divider(),
           const SizedBox(
             height: 10,
           ),
+          Text(
+              mypost["OgretimUyesi"] == "true" ? "Öğretim Üyesi " : ""
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+              mypost["DrOgretimUyesi"] == "true" ? "Dr.Öğretim Üyesi " : ""
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          Text("Müsait Günler"),
+          const SizedBox(
+            height: 20,
+          ),
 
           Text(
-              mypost["Pazartesi"] == "true" ? "Pazartesi" : "Boş"
+              mypost["Pazartesi"] == "true" ? "Pazartesi " : " Pazartesi Dolu"
           ),
           const SizedBox(
             height: 10,
           ),
           Text(
-            mypost["Sali"] == "true" ? "Salı" : "Boş"
+            mypost["Sali"] == "true" ? "Salı" : " Salı Dolu"
           ),
           const SizedBox(
             height: 10,
           ),
           Text(
-            mypost["Carsamba"] == "true" ? "Çarşamba" : "Boş"
+            mypost["Carsamba"] == "true" ? "Çarşamba" : " Çarşamba Dolu"
           ),
           const SizedBox(
             height: 10,
           ),
           Text(
-              mypost["Persembe"] == "true" ? "Perşembe" : "Boş"
+              mypost["Persembe"] == "true" ? "Perşembe" : " Perşembe Dolu"
           ),
           const SizedBox(
             height: 10,
           ),
           Text(
-              mypost["Cuma"] == "true" ? "Cuma" : "Boş"
+              mypost["Cuma"] == "true" ? "Cuma" : " Cuma Dolu"
 
           ),
           const SizedBox(
+            height: 40,
+          ),
+          Text(" Aldığı Dersler"),
+          const SizedBox(
+            height: 20,
+          ),
+          Text(
+              mypost["Nesne"] == "true" ? "   Nesne Yönelimli Programlama" : ""
+          ),
+          const SizedBox(
             height: 10,
           ),
           Text(
-              mypost["Nesne"] == "true" ? "Nesne" : "Boş"
+              mypost["Programlama"] == "true" ? "  Programlama Temelleri" : ""
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+              mypost["Mobil"] == "true" ? "  Mobil Programlama" : ""
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+              mypost["Gorsel"] == "true" ? "   Gorsel Programlama" : ""
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Text(
+              mypost["Veri"] == "true" ? " 05  Veri Yapıları" : ""
           ),
           const SizedBox(
             height: 10,
@@ -128,26 +162,4 @@ class _DersVeMusaitGunListState extends State<DersVeMusaitGunList> {
       ),
     );
   }
-}
-
-AlertDialog _alertDialog(DocumentSnapshot mypost) {
-  return AlertDialog(
-    title: Text(
-      KullaniciText.alertDialogTitle,
-      textAlign: TextAlign.center,
-    ),
-    shape: const RoundedRectangleBorder(
-      borderRadius: BorderRadius.all(
-        Radius.circular(20.0),
-      ),
-    ),
-    content: _alertDialogContent(mypost),
-  );
-}
-
-Row _alertDialogContent(DocumentSnapshot mypost) {
-  return Row(
-    mainAxisAlignment: MainAxisAlignment.spaceAround,
-    children: <Widget>[],
-  );
 }
