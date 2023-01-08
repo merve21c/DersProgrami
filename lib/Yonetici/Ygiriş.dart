@@ -1,4 +1,3 @@
-import 'package:dersprogrami/Kullan%C4%B1c%C4%B1/Kgiri%C5%9F.dart';
 import 'package:dersprogrami/Yonetici/YoneticiSayfasi.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -74,8 +73,6 @@ class _YgirisState extends State<Ygiris> {
               ),
 
               ElevatedButton(
-                child: Text('    Giriş    '),
-
                 onPressed: () async {
                   User? user = await loginUsingEmailPassword(email: _emailController.text, password: _passwordController.text, context: context);
                   print(user);
@@ -83,12 +80,13 @@ class _YgirisState extends State<Ygiris> {
                     Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context)=> YoneticiSayfasi()));
                   }
                 },
+                child:const  Text('    Giriş    '),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: KullaniciColors.pink,
                 ),
               ),
               ElevatedButton(
-                child: Text('Geri Dön'),
+                child: const Text('Geri Dön'),
                 onPressed: () {
                   Navigator.push(
                       context,
