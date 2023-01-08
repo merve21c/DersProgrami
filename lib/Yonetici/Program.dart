@@ -25,8 +25,9 @@ class _DropDownHelperState extends State<DropDownHelper> {
     {"title": "Lab-5", "value": "5"},
   ];
 
-  String defaultValue = "";  //değer
-  String secondDropDown = ""; //ilk dropdown
+  String defaultValue = "";  //ders
+  String secondDropDown = "";//lab
+
 
   @override
   Widget build(BuildContext context) {
@@ -72,11 +73,6 @@ class _DropDownHelperState extends State<DropDownHelper> {
                   isExpanded: true,
                   menuMaxHeight: 350,
                   items: [
-                    const DropdownMenuItem(
-                        child: Text(
-                          "Nesne Yönelimli Programlama",
-                        ),
-                        value: ""),
                     ...dropDownListDers.map<DropdownMenuItem<String>>((data) {
                       return DropdownMenuItem(
                           child: Text(data['title']), value: data['value']);
@@ -105,11 +101,6 @@ class _DropDownHelperState extends State<DropDownHelper> {
                   isExpanded: true,
                   menuMaxHeight: 350,
                   items: [
-                    const DropdownMenuItem(
-                        child: Text(
-                          "Lab-1",
-                        ),
-                        value: ""),
                     ...dropDownListDerslik.map<DropdownMenuItem<String>>((data) {
                       return DropdownMenuItem(
                           child: Text(data['title']), value: data['value']); //uzunluğu kadar
@@ -129,12 +120,17 @@ class _DropDownHelperState extends State<DropDownHelper> {
               onPressed: () {
 
               },
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: KullaniciColors.pink),
               child: const Text("Ekle")),
           ElevatedButton(
               onPressed: () {
 
               },
-              child: const Text("Geri Dön"))
+              style: ElevatedButton.styleFrom(
+              backgroundColor: KullaniciColors.pink),
+              child: const Text("Geri Dön")),
+
         ]),
       ),
     );
