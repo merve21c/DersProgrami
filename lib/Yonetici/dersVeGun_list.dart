@@ -6,6 +6,8 @@ import 'package:dersprogrami/Yonetici/UnvanEkle.dart';
 import 'package:dersprogrami/veritaban%C4%B1/DersVeG%C3%BCnlerService.dart';
 import 'package:flutter/material.dart';
 
+import 'Program.dart';
+
 class YDersVeMusaitGunlist extends StatefulWidget {
   const YDersVeMusaitGunlist({Key? key}) : super(key: key);
 
@@ -65,7 +67,7 @@ class _YDersVeMusaitGunlistState extends State<YDersVeMusaitGunlist> {
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(  context,
-                                    MaterialPageRoute(builder: (context) => const UnvanEkle()));
+                                    MaterialPageRoute(builder: (context) => const DropDownHelper()));
                                 },
                                 child: Text(
                                   "Ekle",
