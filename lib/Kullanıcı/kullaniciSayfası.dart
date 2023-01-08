@@ -84,7 +84,7 @@ class _KullaniciSayfasiState extends State<KullaniciSayfasi> {
   }
   ListTile _drawersayfa() {
     return ListTile(
-      title: Text(KullaniciText.sayfaText),
+      title: Text(KullaniciText.MustafaText),
       onTap: () {
         Navigator.pushAndRemoveUntil(
             context,
