@@ -14,7 +14,10 @@ class DersVeMusaitGun extends StatefulWidget {
 class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
   DersVeGunService _dersVeGunService =DersVeGunService();
 
-  bool? Pazartesi =false,
+  bool?
+  OgretimUyesi=false,
+  DrOgretimUyesi=false,
+  Pazartesi =false,
       Sali = false,
       Carsamba = false,
       Persembe = false,
@@ -199,6 +202,8 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
                 onTap: () {
                   _dersVeGunService
                       .addDersVeGun(
+                           OgretimUyesi.toString(),
+                          DrOgretimUyesi.toString(),
                           Pazartesi.toString(),
                           Sali.toString(),
                           Carsamba.toString(),
@@ -230,3 +235,4 @@ class _DersVeMusaitGunState extends State<DersVeMusaitGun> {
     );
   }
 }
+
