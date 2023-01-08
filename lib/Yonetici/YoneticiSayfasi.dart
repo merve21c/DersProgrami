@@ -1,3 +1,5 @@
+import 'package:dersprogrami/Yonetici/%C3%96bilgiler.dart';
+import 'package:dersprogrami/Yonetici/DersVeGun.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
 import '../Kaynak/Renkler.dart';
@@ -22,6 +24,7 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
       appBar: RenkAppBar(KullaniciText.homeText),
       //body:_ekleunvanlist(),
       drawer: _drawer(),
+      floatingActionButton: _floatingActionButton(),
     );
   }
 
@@ -34,6 +37,7 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
           _drawerHome(),
           const Divider(),
           _drawerLogout(),
+          _drawerlist()
         ],
       ),
     );
@@ -59,6 +63,20 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
       },
     );
   }
+  ListTile _drawerlist() {
+    return ListTile(
+      title: Text(KullaniciText.MustafaText),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Obilgiler()));
+      },
+      leading: Icon(
+        Icons.list,
+        color: KullaniciColors.pink,
+      ),
+    );
+  }
 
   ListTile _drawerLogout() {
     return ListTile(
@@ -68,12 +86,29 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
         Navigator.pushAndRemoveUntil(
             context,
             MaterialPageRoute(builder: (context) => const Ygiris()),
-            (route) => false);
+                (route) => false);
       },
       leading: Icon(
         Icons.remove_circle,
         color: KullaniciColors.pink,
       ),
     );
+  }
+    FloatingActionButton _floatingActionButton() {
+      return FloatingActionButton(
+        backgroundColor: KullaniciColors.grey,
+        elevation: 0.0,
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const YdersVeGun(),
+            ),
+          );
+        },
+        child: const Icon(
+          Icons.add,
+        ),
+      );
   }
 }
