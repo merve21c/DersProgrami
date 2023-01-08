@@ -39,7 +39,8 @@ class KullaniciText{
   static String profileText = "Profilim";
   static String logoutText = "Çıkış yap";
   static String bildirimText = "Bildirim";
-  static String MustafaText=' M.Mustafa Bahsi';
+  static String MustafaText="M.Mustafa Bahsi";
+  static String ProgramText="Program";
   static String removeText = "Silelim";
   static String alertDialogTitle ="";
   static String dersList = "Ders Listesi:";
