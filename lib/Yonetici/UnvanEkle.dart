@@ -112,7 +112,7 @@ class _UnvanEkleState extends State<UnvanEkle> {
                       Gorsel.toString(),
                       Veri.toString());
                   Fluttertoast.showToast(
-                      msg: " Ünvan eklendi!",
+                      msg: " Unvan eklendi!",
                       timeInSecForIosWeb: 5,
                       toastLength: Toast.LENGTH_SHORT,
                       gravity: ToastGravity.BOTTOM,
