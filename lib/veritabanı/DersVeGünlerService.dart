@@ -5,6 +5,8 @@ import '../Kullanıcı/DersVeMüsaitGün.dart';
 class DersVeGunService{
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   Future<DersVeMusaitGun> addDersVeGun(
+      String OgretimUyesi,
+      String DrOgretimUyesi,
       String Pazartesi,
       String Sali,
       String Carsamba,
@@ -20,6 +22,8 @@ class DersVeGunService{
     var ref = _firestore.collection(
         "Kullanıcı"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
+      'OgretimUyesi':OgretimUyesi,
+      'DrOgretimUyesi':DrOgretimUyesi,
       'Pazartesi': Pazartesi,
       'Sali': Sali,
       'Carsamba': Carsamba,
@@ -45,5 +49,4 @@ class DersVeGunService{
     return ref;
 
   }
-
 }
