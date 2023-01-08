@@ -25,7 +25,6 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
       appBar: RenkAppBar(KullaniciText.homeText),
       //body:_ekleunvanlist(),
       drawer: _drawer(),
-      floatingActionButton: _floatingActionButton(),
     );
   }
 
@@ -81,13 +80,11 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
   }
   ListTile _drawerD() {
     return ListTile(
-      title: Text(KullaniciText.logoutText),
+      title: Text(KullaniciText.ProgramText),
       onTap: () {
-        _authService.signOut();
-        Navigator.pushAndRemoveUntil(
+        Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const DropDownHelper()),
-                (route) => false);
+            MaterialPageRoute(builder: (context) => const DropDownHelper()));
       },
       leading: Icon(
         Icons.add,
@@ -111,22 +108,5 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
         color: KullaniciColors.pink,
       ),
     );
-  }
-    FloatingActionButton _floatingActionButton() {
-      return FloatingActionButton(
-        backgroundColor: KullaniciColors.grey,
-        elevation: 0.0,
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const YdersVeGun(),
-            ),
-          );
-        },
-        child: const Icon(
-          Icons.add,
-        ),
-      );
   }
 }
