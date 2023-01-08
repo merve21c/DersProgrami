@@ -1,11 +1,10 @@
 import 'package:dersprogrami/Yonetici/%C3%96bilgiler.dart';
-import 'package:dersprogrami/Yonetici/DersVeGun.dart';
-import 'package:dersprogrami/Yonetici/Program.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
 import '../Kaynak/Renkler.dart';
 import '../Kaynak/String.dart';
 import '../Sabitler/Renk.dart';
+import 'ProgramE.dart';
 import 'Ygiriş.dart';
 
 class YoneticiSayfasi extends StatefulWidget {
