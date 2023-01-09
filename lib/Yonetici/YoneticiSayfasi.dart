@@ -83,7 +83,7 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
       onTap: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const DropDownHelper()));
+            MaterialPageRoute(builder: (context) => const Program()));
       },
       leading: Icon(
         Icons.add,
