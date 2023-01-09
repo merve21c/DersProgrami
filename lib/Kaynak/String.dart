@@ -46,9 +46,15 @@ class KullaniciText{
   static String dersList = "Ders Listesi:";
   static String giveUpText = "Vazgeçtim";
 
+  // dersler
+  static String NesneText="Nesne Yönelimli Programlama";
+  static String ProgramlamaText="Programlama Temelleri";
+  static String MobilText="Mobil Programlama";
+  static String GorselText="Görsel Programlama";
+  static String VeriText="Veri Yapıları";
   //Ekle Unvan
   static String addUnvanText = "Unvan Ekle";
-  static String addDersProgramiTitle = "Ders Programı?";
-
+//unvanlar
+  static String OgretimgorevlisiText ="Öğretim Görevlisi";
   KullaniciText._();
 }
