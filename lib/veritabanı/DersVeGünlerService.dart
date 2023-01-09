@@ -12,7 +12,6 @@ class DersVeGunService{
       String Carsamba,
       String Persembe,
       String Cuma,
-
       String Nesne ,
       String Programlama,
       String Mobil,
@@ -39,6 +38,8 @@ class DersVeGunService{
     });
     return DersVeMusaitGun();
   }
+
+
   Stream<QuerySnapshot> getDersVeGun() {
     var ref = _firestore.collection("Kullanıcı").snapshots();
     return ref;
