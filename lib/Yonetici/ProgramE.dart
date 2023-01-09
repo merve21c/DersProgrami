@@ -1,36 +1,62 @@
-import 'package:dersprogrami/Kaynak/Renkler.dart';
+import 'package:dersprogrami/veritaban%C4%B1/EklemeService.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
-class DropDownHelper extends StatefulWidget {
-  const DropDownHelper({Key? key}) : super(key: key);
+import '../Kaynak/Renkler.dart';
+
+class Program extends StatefulWidget {
+  const Program({Key? key}) : super(key: key);
 
   @override
-  State<DropDownHelper> createState() => _DropDownHelperState();
+  State<Program> createState() => _ProgramState();
 }
 
-class _DropDownHelperState extends State<DropDownHelper> {
+class _ProgramState extends State<Program> {
+  EkleService _ekleService = EkleService();
+  final TextEditingController _adsoyadController = TextEditingController();
+
   List dropDownListDers = [
-    {"title": "Nesne Yönelimli Programlama", "value": "1"},
-    {"title": "Programlama Temelleri", "value": "2"},
-    {"title": "Mobil Programlama", "value": "3"},
-    {"title": "Görsel Programlama", "value": "4"},
-    {"title": "Veri Yapıları", "value": "5"},
+    {"title": "Nesne Yönelimli Programlama", "value": "Nesne Yönelimli Programlama"},
+    {"title": "Programlama Temelleri", "value": "Programlamam Temelleri"},
+    {"title": "Mobil Programlama", "value": "Mobil Programlama"},
+    {"title": "Görsel Programlama", "value": "Görsel Programlama"},
+    {"title": "Veri Yapıları", "value": "Veri Yapıları"},
+  ];
+  List dropDownListUnvan = [
+    {"title": "Öğretim Üyesi", "value": "Öğretim Üyesi"},
+    {"title": "Dr. Öğretim Üyesi", "value": "Dr.Öğretim Üyesi"},
+    {"title": "Araştırma Görevlisi", "value": "Araştırma Görevli"},
+    {"title": "Profesör", "value": "Profesör"},
+    {"title": "Doçent", "value": "Doçent"},
   ];
 
-  List dropDownListDerslik = [
-    {"title": "Lab-1", "value": "1"},
-    {"title": "Lab-2", "value": "2"},
-    {"title": "Lab-3", "value": "3"},
-    {"title": "Lab-4", "value": "4"},
-    {"title": "Lab-5", "value": "5"},
+  List dropDownListLab = [
+    {"title": "Lab-1", "value": "Lab-1"},
+    {"title": "Lab-2", "value": "Lab-2"},
+    {"title": "Lab-3", "value": "Lab-3"},
+    {"title": "Lab-4", "value": "Lab-4"},
+    {"title": "Lab-5", "value": "Lab-5"},
   ];
-  String defaultValue = "";  //ders
-  String secondDropDown = "";//lab
+
+  List dropDownListSaat = [
+    {"title": "9.00-9.45", "value": "9.00-9.45"},
+    {"title": "9.55-10.40", "value": "9.55-10.40"},
+    {"title": "10.50-11.35", "value": "10.50-11.35"},
+    {"title": "11.45-12.30", "value": "11.45-12.30"},
+    {"title": "13.30-14.15", "value": "13.30-14.15"},
+    {"title": "14.25-15.10", "value": "14.25-15.10"},
+    {"title": "14.25-15.10", "value": "14.25-15.10"},
+  ];
+
+  String dropdownunvanValue = "";
+  String DersValue = ""; //ders
+  String DropDownLabValue = ""; //lab
+  String dropdownSaatValue = "";
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:AppBar(
+      appBar: AppBar(
         centerTitle: true,
         title: const Text("Program"),
         backgroundColor: KullaniciColors.purple,
@@ -42,9 +68,10 @@ class _DropDownHelperState extends State<DropDownHelper> {
             height: 20,
           ),
           TextField(
+              controller: _adsoyadController,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color:KullaniciColors.purple),
+                  borderSide: BorderSide(color: KullaniciColors.purple),
                 ),
                 labelText: 'Ad Soyad',
                 hintText: 'Ad Soyad',
@@ -53,32 +80,70 @@ class _DropDownHelperState extends State<DropDownHelper> {
                   color: KullaniciColors.grey,
                 ),
                 labelStyle: TextStyle(color: KullaniciColors.black),
-                border: OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15.0)),
                 contentPadding: const EdgeInsets.all(10),
               )),
           SizedBox(height: 20.0),
-
           InputDecorator(
             decoration: InputDecoration(
               border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
               contentPadding: const EdgeInsets.all(10),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                   isDense: true,
-                  value: defaultValue, //dersler
+                  value: dropdownunvanValue,
                   isExpanded: true,
                   menuMaxHeight: 350,
                   items: [
+                    const DropdownMenuItem(
+                        child: Text(
+                          "Ünvan Seçiniz",
+                        ),
+                        value: ""),
+                    ...dropDownListUnvan.map<DropdownMenuItem<String>>((data) {
+                      return DropdownMenuItem(
+                          child: Text(data['title']), value: data['value']);
+                    }).toList(),
+                  ],
+                  onChanged: (title) {
+                    setState(() {
+                      dropdownunvanValue = title?? dropdownunvanValue;
+                    });
+                  }),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          InputDecorator(
+            decoration: InputDecoration(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+              contentPadding: const EdgeInsets.all(10),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                  isDense: true,
+                  value: DersValue,
+                  isExpanded: true,
+                  menuMaxHeight: 350,
+                  items: [
+                    const DropdownMenuItem(
+                        child: Text(
+                          "Ders Seçiniz",
+                        ),
+                        value: ""),
                     ...dropDownListDers.map<DropdownMenuItem<String>>((data) {
                       return DropdownMenuItem(
                           child: Text(data['title']), value: data['value']);
                     }).toList(),
                   ],
-                  onChanged: (value) {
+                  onChanged: (title) {
                     setState(() {
-                      defaultValue = value!;
+                      DersValue = title?? DersValue;
                     });
                   }),
             ),
@@ -89,24 +154,63 @@ class _DropDownHelperState extends State<DropDownHelper> {
           InputDecorator(
             decoration: InputDecoration(
               border:
-              OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
               contentPadding: const EdgeInsets.all(10),
             ),
             child: DropdownButtonHideUnderline(
               child: DropdownButton<String>(
                   isDense: true,
-                  value: secondDropDown, //lablar
+                  value: DropDownLabValue,
                   isExpanded: true,
                   menuMaxHeight: 350,
                   items: [
-                    ...dropDownListDerslik.map<DropdownMenuItem<String>>((data) {
+                    const DropdownMenuItem(
+                        child: Text(
+                          "Lab Seçiniz",
+                        ),
+                        value: ""),
+                    ...dropDownListLab
+                        .map<DropdownMenuItem<String>>((data) {
                       return DropdownMenuItem(
-                          child: Text(data['title']), value: data['value']); //uzunluğu kadar
+                          child: Text(data['title']), value: data['value']);
                     }).toList(),
                   ],
-                  onChanged: (value) {
+                  onChanged: (title) {
                     setState(() {
-                      secondDropDown = value!;
+                      DropDownLabValue = title?? DropDownLabValue;
+                    });
+                  }),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          InputDecorator(
+            decoration: InputDecoration(
+              border:
+                  OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+              contentPadding: const EdgeInsets.all(10),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                  isDense: true,
+                  value: dropdownSaatValue,
+                  isExpanded: true,
+                  menuMaxHeight: 350,
+                  items: [
+                    const DropdownMenuItem(
+                        child: Text(
+                          "Saat Seçiniz",
+                        ),
+                        value: ""),
+                    ...dropDownListSaat.map<DropdownMenuItem<String>>((data) {
+                      return DropdownMenuItem(
+                          child: Text(data['title']), value: data['value']);
+                    }).toList(),
+                  ],
+                  onChanged: (title) {
+                    setState(() {
+                      dropdownSaatValue = title?? dropdownSaatValue;
                     });
                   }),
             ),
@@ -116,19 +220,21 @@ class _DropDownHelperState extends State<DropDownHelper> {
           ),
           ElevatedButton(
               onPressed: () {
+                _ekleService.addProgram(_adsoyadController.text,dropdownunvanValue,DersValue,DropDownLabValue,dropdownSaatValue);
 
+                Fluttertoast.showToast(
+                    msg: " Bilgiler eklendi!",
+                    timeInSecForIosWeb: 5,
+                    toastLength: Toast.LENGTH_SHORT,
+                    gravity: ToastGravity.BOTTOM,
+                    backgroundColor: Colors.grey[600],
+                    textColor: Colors.white,
+                    fontSize: 14);
+                Navigator.pop(context);
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: KullaniciColors.pink),
               child: const Text("Ekle")),
-          ElevatedButton(
-              onPressed: () {
-
-              },
-              style: ElevatedButton.styleFrom(
-                  backgroundColor: KullaniciColors.pink),
-              child: const Text("Geri Dön")),
-
         ]),
       ),
     );
