@@ -1,9 +1,9 @@
+import 'package:dersprogrami/veritaban%C4%B1/UnvanService.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../Kaynak/Renkler.dart';
-import '../veritabanı/DersVeGünlerService.dart';
 
 class UnvanEkle extends StatefulWidget {
   const UnvanEkle({Key? key}) : super(key: key);
@@ -13,21 +13,11 @@ class UnvanEkle extends StatefulWidget {
 }
 
 class _UnvanEkleState extends State<UnvanEkle> {
-  DersVeGunService _dersVeGunService =DersVeGunService();
+UnvanService _unvanService =UnvanService();
 
   bool?
   OgretimUyesi=false,
-      DrOgretimUyesi=false,
-      Pazartesi =false,
-      Sali = false,
-      Carsamba = false,
-      Persembe = false,
-      Cuma = false;
-  bool? Nesne = false,
-      Programlama = false,
-      Mobil = false,
-      Gorsel = false,
-      Veri = false;
+      DrOgretimUyesi=false;
 
   @override
   void initState() {
@@ -97,20 +87,11 @@ class _UnvanEkleState extends State<UnvanEkle> {
               padding: const EdgeInsets.only(left: 150, right: 80, bottom: 95),
               child: InkWell(
                 onTap: () {
-                  _dersVeGunService
-                      .addDersVeGun(
+                  _unvanService
+                      .addUnvan(
                       OgretimUyesi.toString(),
                       DrOgretimUyesi.toString(),
-                      Pazartesi.toString(),
-                      Sali.toString(),
-                      Carsamba.toString(),
-                      Persembe.toString(),
-                      Cuma.toString(),
-                      Nesne.toString(),
-                      Programlama.toString(),
-                      Mobil.toString(),
-                      Gorsel.toString(),
-                      Veri.toString());
+                  );
                   Fluttertoast.showToast(
                       msg: " Unvan eklendi!",
                       timeInSecForIosWeb: 5,
