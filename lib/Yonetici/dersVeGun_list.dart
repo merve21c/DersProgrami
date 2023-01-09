@@ -67,7 +67,7 @@ class _YDersVeMusaitGunlistState extends State<YDersVeMusaitGunlist> {
                               GestureDetector(
                                 onTap: () {
                                   Navigator.push(  context,
-                                    MaterialPageRoute(builder: (context) => const DropDownHelper()));
+                                    MaterialPageRoute(builder: (context) => const Program()));
                                 },
                                 child: Text(
                                   "Ekle",
