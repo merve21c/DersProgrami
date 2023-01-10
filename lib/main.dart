@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'GirişEkranı.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+//veri tabanı veya diğer bağlantıları pubcpec.yaml dosyamızın içine ekliyıeuz
 
-//veri tabanı veya diğer bağlantıları pubcpec.yaml dosyamızın içine ekliyoruz
-
-void main(){
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
-    runApp(MyApp());
+  await Firebase.initializeApp();     //veri tabanını çalıştırmak için
+  runApp(const MyApp());
 }
 class MyApp extends StatelessWidget{
-  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  const MyApp({Key? key}) :super(key: key);
   @override
 
   Widget build(BuildContext context){
