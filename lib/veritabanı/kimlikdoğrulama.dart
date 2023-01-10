@@ -1,4 +1,6 @@
 
+import '../KimlikDoğrulama.dart';
+import '../veritabanı/kimlikdoğrulama.dart';
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
