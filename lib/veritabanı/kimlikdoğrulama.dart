@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-import '../KimlikDoğrulama.dart';
-import '../veritabanı/kimlikdoğrulama.dart';
+import '../Kullanıcı/DersVeMüsaitGün.dart';
+
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -31,12 +33,14 @@ class AuthService {
         .set({
       'userName': name,
       'email': email,
-        });
+    });
 
     return user.user;
 
   }
 }
+
+
 
 class FirebaseAuth {
 }
