@@ -3,6 +3,7 @@ import 'package:dersprogrami/Kaynak/String.dart';
 import 'package:dersprogrami/Sabitler/Bekleme_Sayfas%C4%B1.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 
 import '../Kaynak/Renkler.dart';
