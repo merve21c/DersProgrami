@@ -1,4 +1,4 @@
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../Kullanıcı/DersVeMüsaitGün.dart';
 
@@ -40,7 +40,7 @@ class DersVeGunService{
   }
 
 
-  Stream<QuerySnapShot> getDersVeGun() {
+  Stream<QuerySnapshot> getDersVeGun() {
     var ref = _firestore.collection("Kullanıcı").snapshots();
     return ref;
   }
