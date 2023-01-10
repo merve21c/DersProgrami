@@ -1,9 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dersprogrami/Yonetici/ProgramE.dart';
 
 class EkleService {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
-  Future<Program> addProgram(String adsoyad,String Unvan,String Ders,String Lab,String Saat ) async {
+  Future<Program> addProgram(String adsoyad,String Unvan,String Ders,String Lab,String Saat , String Sube, String Gun) async {
     var ref =
         _firestore.collection("Öğretmen"); //koleksiyonumuzun ismini yazıyoruz .
     await ref.add({
@@ -12,6 +13,8 @@ class EkleService {
       'Ders':Ders,
       'Lab':Lab,
       'Saat':Saat,
+      'Sube':Sube,
+      'Gun':Gun
     });
     return Program();
   }
