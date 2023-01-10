@@ -40,7 +40,8 @@ class KullaniciText{
   static String logoutText = "Çıkış yap";
   static String bildirimText = "Bildirim";
   static String MustafaText="M.Mustafa Bahsi";
-  static String ProgramText="Program";
+  static String ProgramText=" Bilgisayar Bölümü P Ekleme";
+  static String Program2Text="Bilgisayar Bölümü Programı";
   static String removeText = "Silelim";
   static String alertDialogTitle ="";
   static String dersList = "Ders Listesi:";
