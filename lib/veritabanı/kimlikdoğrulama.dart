@@ -1,7 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-
-import '../Kullanıcı/DersVeMüsaitGün.dart';
 
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -38,6 +34,9 @@ class AuthService {
     return user.user;
 
   }
+}
+
+class FirebaseAuth {
 }
 
 
