@@ -50,13 +50,13 @@ class MusaitGunBilgisi extends StatelessWidget {
               ],
               rows: [
                 DataRow(cells: [
-                  DataCell(Text('edanur temel')),
+                  DataCell(Text('canan')),
                   DataCell(Text('pazartesi-salı-cuma')),
 
 
                 ]),
                 DataRow(cells: [
-                  DataCell(Text('tuğçe tunç')),
+                  DataCell(Text('')),
                   DataCell(Text('çarşamba-cuma')),
 
                 ]),
