@@ -16,11 +16,14 @@ class _ProgramState extends State<Program> {
   final TextEditingController _adsoyadController = TextEditingController();
 
   List dropDownListDers = [
-    {"title": "Nesne Yönelimli Programlama", "value": "Nesne Yönelimli Programlama"},
-    {"title": "Programlama Temelleri", "value": "Programlamam Temelleri"},
-    {"title": "Mobil Programlama", "value": "Mobil Programlama"},
-    {"title": "Görsel Programlama", "value": "Görsel Programlama"},
-    {"title": "Veri Yapıları", "value": "Veri Yapıları"},
+    {
+      "title": "Nesne Yönelimli Programlama",
+      "value": "115  Nesne Yönelimli Programlama"
+    },
+    {"title": "Programlama Temelleri", "value": " 248 Programlamam Temelleri"},
+    {"title": "Mobil Programlama", "value": "256 Mobil Programlama"},
+    {"title": "Görsel Programlama", "value": " 369 Görsel Programlama"},
+    {"title": "Veri Yapıları", "value": " 299 Veri Yapıları"},
   ];
   List dropDownListUnvan = [
     {"title": "Öğretim Üyesi", "value": "Öğretim Üyesi"},
@@ -38,6 +41,7 @@ class _ProgramState extends State<Program> {
     {"title": "Lab-5", "value": "Lab-5"},
   ];
 
+
   List dropDownListSaat = [
     {"title": "9.00-9.45", "value": "9.00-9.45"},
     {"title": "9.55-10.40", "value": "9.55-10.40"},
@@ -48,10 +52,26 @@ class _ProgramState extends State<Program> {
     {"title": "14.25-15.10", "value": "14.25-15.10"},
   ];
 
+  List dropDownListSube = [
+    {"title": "A şubesi", "value": "A Şubesi"},
+    {"title": "B şubesi", "value": "B Şubesi"},
+
+  ];
+  List dropDownListGun = [
+    {"title": "Pazartesi", "value": "Pazartesi"},
+    {"title": "Sali", "value": "Salı"},
+    {"title": "Carsamba", "value": "Çarşamba"},
+    {"title": "Persembe", "value": "Perşembe"},
+    {"title": "Cuma", "value": "Cuma"},
+
+  ];
+
   String dropdownunvanValue = "";
   String DersValue = ""; //ders
   String DropDownLabValue = ""; //lab
   String dropdownSaatValue = "";
+  String dropdownSube="";
+  String dropdownGun="";
 
   @override
   Widget build(BuildContext context) {
@@ -110,7 +130,7 @@ class _ProgramState extends State<Program> {
                   ],
                   onChanged: (title) {
                     setState(() {
-                      dropdownunvanValue = title?? dropdownunvanValue;
+                      dropdownunvanValue = title ?? dropdownunvanValue;
                     });
                   }),
             ),
@@ -143,7 +163,7 @@ class _ProgramState extends State<Program> {
                   ],
                   onChanged: (title) {
                     setState(() {
-                      DersValue = title?? DersValue;
+                      DersValue = title ?? DersValue;
                     });
                   }),
             ),
@@ -169,15 +189,14 @@ class _ProgramState extends State<Program> {
                           "Lab Seçiniz",
                         ),
                         value: ""),
-                    ...dropDownListLab
-                        .map<DropdownMenuItem<String>>((data) {
+                    ...dropDownListLab.map<DropdownMenuItem<String>>((data) {
                       return DropdownMenuItem(
                           child: Text(data['title']), value: data['value']);
                     }).toList(),
                   ],
                   onChanged: (title) {
                     setState(() {
-                      DropDownLabValue = title?? DropDownLabValue;
+                      DropDownLabValue = title ?? DropDownLabValue;
                     });
                   }),
             ),
@@ -210,7 +229,75 @@ class _ProgramState extends State<Program> {
                   ],
                   onChanged: (title) {
                     setState(() {
-                      dropdownSaatValue = title?? dropdownSaatValue;
+                      dropdownSaatValue = title ?? dropdownSaatValue;
+                    });
+                  }),
+            ),
+          ),
+
+
+          const SizedBox(
+            height: 20,
+          ),
+          InputDecorator(
+            decoration: InputDecoration(
+              border:
+              OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+              contentPadding: const EdgeInsets.all(10),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                  isDense: true,
+                  value: dropdownSube,
+                  isExpanded: true,
+                  menuMaxHeight: 350,
+                  items: [
+                    const DropdownMenuItem(
+                        child: Text(
+                          "Şube Seçiniz",
+                        ),
+                        value: ""),
+                    ...dropDownListSube.map<DropdownMenuItem<String>>((data) {
+                      return DropdownMenuItem(
+                          child: Text(data['title']), value: data['value']);
+                    }).toList(),
+                  ],
+                  onChanged: (title) {
+                    setState(() {
+                      dropdownSube = title ?? dropdownSube;
+                    });
+                  }),
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          InputDecorator(
+            decoration: InputDecoration(
+              border:
+              OutlineInputBorder(borderRadius: BorderRadius.circular(15.0)),
+              contentPadding: const EdgeInsets.all(10),
+            ),
+            child: DropdownButtonHideUnderline(
+              child: DropdownButton<String>(
+                  isDense: true,
+                  value: dropdownGun,
+                  isExpanded: true,
+                  menuMaxHeight: 350,
+                  items: [
+                    const DropdownMenuItem(
+                        child: Text(
+                          "Gun Seçiniz",
+                        ),
+                        value: ""),
+                    ...dropDownListGun.map<DropdownMenuItem<String>>((data) {
+                      return DropdownMenuItem(
+                          child: Text(data['title']), value: data['value']);
+                    }).toList(),
+                  ],
+                  onChanged: (title) {
+                    setState(() {
+                      dropdownGun = title ?? dropdownGun;
                     });
                   }),
             ),
@@ -220,7 +307,15 @@ class _ProgramState extends State<Program> {
           ),
           ElevatedButton(
               onPressed: () {
-                _ekleService.addProgram(_adsoyadController.text,dropdownunvanValue,DersValue,DropDownLabValue,dropdownSaatValue);
+                _ekleService.addProgram(
+                    _adsoyadController.text,
+                    dropdownunvanValue,
+                    DersValue,
+                    DropDownLabValue,
+                    dropdownSaatValue,
+                    dropdownSube,
+                  dropdownGun
+                );
 
                 Fluttertoast.showToast(
                     msg: " Bilgiler eklendi!",
