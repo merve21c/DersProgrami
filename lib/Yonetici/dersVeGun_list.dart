@@ -66,12 +66,6 @@ class _YDersVeMusaitGunlistState extends State<YDersVeMusaitGunlist> {
                             children: <Widget>[
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(  context,
-                                    MaterialPageRoute(builder: (context) => const Program()));
-                                },
-                              ),
-                              GestureDetector(
-                                onTap: () {
                                   _dersVeGunService
                                       .removeDersVeGun(mypost.id);
                                   Navigator.pop(context);
