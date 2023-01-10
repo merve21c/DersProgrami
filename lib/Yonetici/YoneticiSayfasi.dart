@@ -1,11 +1,14 @@
 import 'package:dersprogrami/Yonetici/%C3%96bilgiler.dart';
+import 'package:dersprogrami/Yonetici/ProgramList.dart';
+import 'package:dersprogrami/Yonetici/Ygiri%C5%9F.dart';
+import 'package:dersprogrami/Yonetici/ProgramSayfası.dart';
 import 'package:dersprogrami/veritaban%C4%B1/kimlikdo%C4%9Frulama.dart';
 import 'package:flutter/material.dart';
 import '../Kaynak/Renkler.dart';
 import '../Kaynak/String.dart';
 import '../Sabitler/Renk.dart';
 import 'ProgramE.dart';
-import 'Ygiriş.dart';
+
 
 class YoneticiSayfasi extends StatefulWidget {
   const YoneticiSayfasi({Key? key}) : super(key: key);
@@ -38,6 +41,8 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
           _drawerLogout(),
           _drawerlist(),
           _drawerD(),
+          _drawerProgram(),
+
         ],
       ),
     );
@@ -65,11 +70,11 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
   }
   ListTile _drawerlist() {
     return ListTile(
-      title: Text(KullaniciText.MustafaText),
+      title: Text(KullaniciText.Program2Text),
       onTap: () {
         Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const Obilgiler()));
+            MaterialPageRoute(builder: (context) => const BilgilerO()));
       },
       leading: Icon(
         Icons.list,
@@ -78,6 +83,20 @@ class _YoneticiSayfasiState extends State<YoneticiSayfasi> {
     );
   }
   ListTile _drawerD() {
+    return ListTile(
+      title: Text(KullaniciText.MustafaText),
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => const Obilgiler()));
+      },
+      leading: Icon(
+        Icons.person,
+        color: KullaniciColors.pink,
+      ),
+    );
+  }
+  ListTile _drawerProgram() {
     return ListTile(
       title: Text(KullaniciText.ProgramText),
       onTap: () {
