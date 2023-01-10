@@ -49,7 +49,7 @@ class _YDersVeMusaitGunlistState extends State<YDersVeMusaitGunlist> {
                 builder: (BuildContext context) {
                   return AlertDialog(
                       title: Text(
-                        "Ünvan eklensin mi ?",
+                        "Silinsin mi ?",
                         textAlign: TextAlign.center,
                       ),
                       shape: RoundedRectangleBorder(
@@ -69,12 +69,6 @@ class _YDersVeMusaitGunlistState extends State<YDersVeMusaitGunlist> {
                                   Navigator.push(  context,
                                     MaterialPageRoute(builder: (context) => const Program()));
                                 },
-                                child: Text(
-                                  "Ekle",
-                                  style: TextStyle(
-                                      color: Colors.blue,
-                                      fontWeight: FontWeight.bold),
-                                ),
                               ),
                               GestureDetector(
                                 onTap: () {
